@@ -9,7 +9,6 @@ angular.module(
     'ngResource',
     'ngRoute',
     'ui.bootstrap',
-
     'eee.users'
   ]
 );
