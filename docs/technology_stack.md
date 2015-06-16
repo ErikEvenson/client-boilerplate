@@ -2,6 +2,10 @@
 
 These are the technologies used in this project.
 
+## CDN-provided
+
+- [bootstrap](http://www.bootstrapcdn.com/) 3.3.4 - Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+
 ## apt-get-installed
 
 ## bash-installed
@@ -13,6 +17,7 @@ These are the technologies used in this project.
 ## npm-installed
 
 - [angular](https://www.npmjs.com/package/angular) 1.4.0 - HTML enhanced for web apps
+- [angular-bootstrap-npm](https://www.npmjs.com/package/angular-bootstrap-npm) 0.13.0 - An NPM package for using UI.Bootstrap directives with Node projects (via Browserify, etc.)
 - [angular-mocks](https://www.npmjs.com/package/angular-mocks) 1.4.0 - AngularJS mocks for testing
 - [angular-resource](https://www.npmjs.com/package/angular-resource) 1.4.0 - AngularJS module for interacting with RESTful server-side data sources
 - [angular-route](https://www.npmjs.com/package/angular-route) 1.4.0 - AngularJS router module

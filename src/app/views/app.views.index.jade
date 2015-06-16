@@ -1,4 +1,7 @@
 section(ng-controller="UsersController")
+  p
+    button.btn.btn-default(type=submit) Button
+
   div(data-ng-show="!authentication.user")
     p
       a(href="/signup") Signup

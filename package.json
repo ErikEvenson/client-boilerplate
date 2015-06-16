@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "angular": "1.4.0",
+    "angular-bootstrap-npm": "0.13.0",
     "angular-resource": "1.4.0",
     "angular-route": "1.4.0",
     "debug": "2.2.0"
@@ -54,7 +55,6 @@
     "serve-static": "1.9.3",
     "uuid": "2.0.1",
     "vinyl-source-stream": "1.1.0",
-    "yargs": "3.9.1",
     "yargs": "3.9.1"
   }
 }
