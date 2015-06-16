@@ -1,13 +1,13 @@
 var
   angular = require('angular');
 
+require('angular-ui-router');
 require('angular-bootstrap-npm');
 
 angular.module(
   'app',
   [
-    'ngResource',
-    'ngRoute',
+    'ui.router',
     'ui.bootstrap',
     'eee.users'
   ]
