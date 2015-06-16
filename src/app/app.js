@@ -8,14 +8,19 @@ angular.module(
   [
     'ngResource',
     'ngRoute',
-    'ui.bootstrap'
+    'ui.bootstrap',
+
+    'eee.users'
   ]
 );
 
 require('./templates');
 require('./config');
+require('./services');
+require('./controllers');
 
 // Modules
+require('../eee.users');
 
 // Finally, bootstrap the angular app
 angular.element(document).ready(function() {

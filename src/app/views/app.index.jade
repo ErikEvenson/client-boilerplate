@@ -1,0 +1,7 @@
+div.container(ng-controller='MainController')
+  div.row(ng-show="!user")
+    div.col-md-4.col-md-offset-4
+      p NOT LOGGED
+  div.row(ng-show="user")
+    div.col-md-4.col-md-offset-4
+      p LOGGED
