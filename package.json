@@ -7,9 +7,9 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "angular": "1.4.0",
+    "angular": "1.4.1",
     "angular-bootstrap-npm": "0.13.0",
-    "angular-resource": "1.4.0",
+    "angular-resource": "1.4.1",
     "angular-ui-router": "0.2.15",
     "debug": "2.2.0"
   },
@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "angular-mocks": "1.4.0",
+    "angular-mocks": "1.4.1",
     "async": "1.0.0",
     "aws-sdk": "2.1.32",
     "browserify": "10.2.4",
