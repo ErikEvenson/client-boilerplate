@@ -1,8 +1,12 @@
-div.jumbotron.text-center
-  h1 Boilerplate
-  p This page demonstrates nested views.
-  a.btn.btn-primary(ui-sref=".list") List
-  a.btn.btn-danger(ui-sref=".paragraph") Paragraph
+nav.navbar.navbar-inverse(role="navigation")
+  div.navbar-header
+    a.navbar-brand(ui-sref="home") Boilerplate
 
-div.row
+  ul.nav.navbar-nav
+    li
+      a(ui-sref="home") Home
+    li
+      a(ui-sref=".about") About
+
+div.container
   ui-view
