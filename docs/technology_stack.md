@@ -47,6 +47,7 @@ These are the technologies used in this project.
 - [karma-browserify](https://www.npmjs.com/package/karma-browserify) 4.2.1 - A fast browserify integration for Karma that handles large projects with ease
 - [karma-jasmine](https://www.npmjs.com/package/karma-jasmine) 0.3.5 - A Karma plugin - adapter for Jasmine testing framework.
 - [karma-phantomjs-launcher](https://www.npmjs.com/package/karma-phantomjs-launcher) 0.2.0 - A Karma plugin. Launcher for PhantomJS.
+- [lodash]() 3.9.3
 - [map-stream](https://www.npmjs.com/package/map-stream) 0.0.5 - construct pipes of streams of events
 - [mkdirp](https://www.npmjs.com/package/mkdirp) 0.5.1 - Recursively mkdir, like mkdir -p
 - [phantomjs]()

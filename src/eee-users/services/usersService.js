@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 angular.module('eee-users')
   .factory('UsersService', function(Group, User) {
     var service = {};
@@ -6,6 +8,11 @@ angular.module('eee-users')
 
     service.getGroups = function() {
       return groups;
+    };
+
+    service.getUser = function(options) {
+      var user = _.find(users, options);
+      return user;
     };
     
     service.getUsers = function() {

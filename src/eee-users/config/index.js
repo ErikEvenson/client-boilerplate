@@ -36,6 +36,11 @@ angular.module('eee-users')
       controller: 'UsersController',
       name:'users',
       parent: usersRoot,
+      resolve: {
+        users: function(UsersService) {
+          return UsersService.getUsers();
+        }
+      },
       templateUrl: 'eee-users.users.html',
       url: ''
     }
@@ -55,9 +60,16 @@ angular.module('eee-users')
     }
 
     var user = {
+      controller: 'UserController',
       name:'user',
       parent: usersRoot,
-      template: 'USERS DETAIL',
+      resolve: {
+        user: function($stateParams, UsersService) {
+          var username = $stateParams.username;
+          return UsersService.getUser({username: username});
+        }
+      },
+      templateUrl: 'eee-users.user.html',
       url: '/:username'
     }
 
