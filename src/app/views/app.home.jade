@@ -1,12 +1,7 @@
-nav.navbar.navbar-inverse(role="navigation")
-  div.navbar-header
-    a.navbar-brand(ui-sref="home") {{ brand }}
+ui-view(name="topNav")
 
-  ul.nav.navbar-nav
-    li
-      a(ui-sref="home") Home
-    li
-      a(ui-sref=".about") About
-
-div.container
-  ui-view
+div.row
+  div.col-lg-2
+    ui-view(name="leftNav")
+  div.col-lg-10
+    ui-view(name="content")

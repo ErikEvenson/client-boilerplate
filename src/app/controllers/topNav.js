@@ -2,8 +2,8 @@ require('angular');
 
 angular.module('app')
   .controller(
-    'MainController',
+    'TopNavController',
     function($scope) {
-      
+      $scope.brand = 'Boilerplate';
     }
   );

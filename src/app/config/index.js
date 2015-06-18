@@ -6,9 +6,25 @@ angular.module('app')
 
     $stateProvider
       .state('home', {
-        controller: 'MainController',
         url: '/home',
-        templateUrl: 'app.home.html'
+        views: {
+          '': {
+            controller: 'MainController',
+            templateUrl: 'app.home.html'
+          },
+          'topNav@home': {
+            controller: 'TopNavController',
+            templateUrl: 'app.home.topNav.html'
+          },
+          'leftNav@home': {
+            controller: 'LeftNavController',
+            templateUrl: 'app.home.leftNav.html'
+          },
+          'content@home': {
+            controller: 'ContentController',
+            templateUrl: 'app.home.content.html'
+          }
+        }
       })
       .state('home.about', {
         url: '/about',

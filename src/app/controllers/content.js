@@ -2,8 +2,8 @@ require('angular');
 
 angular.module('app')
   .controller(
-    'MainController',
+    'ContentController',
     function($scope) {
-      
+
     }
   );
