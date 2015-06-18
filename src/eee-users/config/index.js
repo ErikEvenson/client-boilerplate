@@ -1,4 +1,4 @@
-angular.module('eee.users')
+angular.module('eee-users')
   .config(function($stateProvider) {
     var groupsRoot = {
       abstract: true,

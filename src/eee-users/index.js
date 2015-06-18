@@ -1,5 +1,5 @@
 angular.module(
-  'eee.users',
+  'eee-users',
   ['ui.router']
 );
 

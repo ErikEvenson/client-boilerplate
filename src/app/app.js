@@ -7,7 +7,7 @@ require('angular-bootstrap-npm');
 angular.module(
   'app',
   [
-    'eee.users',
+    'eee-users',
     'ui.router',
     'ui.bootstrap'
   ]
@@ -19,7 +19,7 @@ require('./services');
 require('./controllers');
 
 // Modules
-require('../eee.users');
+require('../eee-users');
 
 // Finally, bootstrap the angular app
 angular.element(document).ready(function() {
