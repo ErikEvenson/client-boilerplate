@@ -1,7 +1,7 @@
 require('angular-ui-router');
 
 angular.module('app')
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider
@@ -22,12 +22,12 @@ angular.module('app')
             'columnTwo@home.about': { template: 'Look I am a column 2!' }
         }
       });
-  }]);
+  });
 
 angular.module('app')
-  .config(['$locationProvider', function($locationProvider) {
+  .config(function($locationProvider) {
     $locationProvider.hashPrefix('!');
-  }]);
+  });
 
 // Solves a Facebook OAuth issue...
 if (window.location.hash === '#_=_') window.location.hash = '#!';

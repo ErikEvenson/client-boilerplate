@@ -24,6 +24,7 @@ These are the technologies used in this project.
 - [async](https://www.npmjs.com/package/async) 1.0.0 - Higher-order functions and common patterns for asynchronous code
 - [aws-sdk](https://www.npmjs.com/package/aws-sdk) 2.1.32 - AWS SDK for JavaScript
 - [browserify](https://www.npmjs.com/package/browserify) 10.2.4 - browser-side require() the node way
+- [browserify-ngannotate]() 1.0.1 -
 - [chai](https://www.npmjs.com/package/chai) 2.3.0 - BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
 - [connect](https://www.npmjs.com/package/connect) - 3.3.5
 - [debug](https://www.npmjs.com/package/debug) 2.2.0 - tiny node.js debugging utility modelled after node core's debugging technique

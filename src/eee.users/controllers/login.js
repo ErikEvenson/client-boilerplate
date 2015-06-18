@@ -4,12 +4,10 @@ var
 angular.module('eee.users')
   .controller(
     'LoginController',
-    ['$scope', '$location', '$rootScope',
-      function($scope, $location, $rootScope) {
-        $scope.login = function() {
-          $rootScope.user = {};
-          $location.path('/');
-        };
-      }
-    ]
+    function($scope, $location, $rootScope) {
+      $scope.login = function() {
+        $rootScope.user = {};
+        $location.path('/');
+      };
+    }
   );
