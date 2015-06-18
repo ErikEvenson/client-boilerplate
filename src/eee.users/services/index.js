@@ -1,2 +1,2 @@
-require('./groups')
+require('./groups');
 require('./users');

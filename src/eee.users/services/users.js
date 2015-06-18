@@ -1,10 +1,10 @@
 require('angular');
 
 angular.module('eee.users')
-  .factory('Users', function() {
+  .factory('User', function() {
     function User(args) {
       // fields
-    };
+    }
 
     return User;
   });
