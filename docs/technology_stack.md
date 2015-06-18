@@ -16,14 +16,15 @@ These are the technologies used in this project.
 
 ## npm-installed
 
-- [angular](https://www.npmjs.com/package/angular) 1.4.0 - HTML enhanced for web apps
+- [angular](https://www.npmjs.com/package/angular) 1.4.1 - HTML enhanced for web apps
 - [angular-bootstrap-npm](https://www.npmjs.com/package/angular-bootstrap-npm) 0.13.0 - An NPM package for using UI.Bootstrap directives with Node projects (via Browserify, etc.)
-- [angular-mocks](https://www.npmjs.com/package/angular-mocks) 1.4.0 - AngularJS mocks for testing
-- [angular-resource](https://www.npmjs.com/package/angular-resource) 1.4.0 - AngularJS module for interacting with RESTful server-side data sources
-- [angular-route](https://www.npmjs.com/package/angular-route) 1.4.0 - AngularJS router module
+- [angular-mocks](https://www.npmjs.com/package/angular-mocks) 1.4.1 - AngularJS mocks for testing
+- [angular-resource](https://www.npmjs.com/package/angular-resource) 1.4.1 - AngularJS module for interacting with RESTful server-side data sources
+- [angular-ui-router](https://www.npmjs.com/package/angular-ui-router) 0.2.15 - State-based routing for AngularJS
 - [async](https://www.npmjs.com/package/async) 1.0.0 - Higher-order functions and common patterns for asynchronous code
 - [aws-sdk](https://www.npmjs.com/package/aws-sdk) 2.1.32 - AWS SDK for JavaScript
 - [browserify](https://www.npmjs.com/package/browserify) 10.2.4 - browser-side require() the node way
+- [browserify-ngannotate]() 1.0.1 -
 - [chai](https://www.npmjs.com/package/chai) 2.3.0 - BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
 - [connect](https://www.npmjs.com/package/connect) - 3.3.5
 - [debug](https://www.npmjs.com/package/debug) 2.2.0 - tiny node.js debugging utility modelled after node core's debugging technique
@@ -41,11 +42,15 @@ These are the technologies used in this project.
 - [gulp-rename](https://www.npmjs.com/package/gulp-rename) 1.2.2 - Rename files
 - [gulp-shell](https://www.npmjs.com/package/gulp-shell) 0.4.2 - A handy command line interface for gulp
 - [gulp-util](https://www.npmjs.com/package/gulp-util) 3.0.4 - Utility functions for gulp plugins
+- [jasmine-core]()
+- [karma]()
 - [karma-browserify](https://www.npmjs.com/package/karma-browserify) 4.2.1 - A fast browserify integration for Karma that handles large projects with ease
 - [karma-jasmine](https://www.npmjs.com/package/karma-jasmine) 0.3.5 - A Karma plugin - adapter for Jasmine testing framework.
 - [karma-phantomjs-launcher](https://www.npmjs.com/package/karma-phantomjs-launcher) 0.2.0 - A Karma plugin. Launcher for PhantomJS.
+- [lodash]() 3.9.3
 - [map-stream](https://www.npmjs.com/package/map-stream) 0.0.5 - construct pipes of streams of events
 - [mkdirp](https://www.npmjs.com/package/mkdirp) 0.5.1 - Recursively mkdir, like mkdir -p
+- [phantomjs]()
 - [serve-static](https://www.npmjs.com/package/serve-static) 1.9.3
 - [uuid](https://www.npmjs.com/package/uuid) 2.0.1 - Rigorous implementation of RFC4122 (v1 and v4) UUIDs.
 - [vinyl-source-stream](https://www.npmjs.com/package/vinyl-source-stream) 1.1.0 - Use conventional text streams at the start of your gulp or vinyl pipelines

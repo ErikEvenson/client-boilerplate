@@ -1,0 +1,10 @@
+div.row
+  div.col-lg-2
+    h2 Navigation
+    ul.list-group
+
+    div(ng-repeat="navigation in navigations")
+      a.list-group-item(ui-sref="{{navigation.state}}") {{navigation.title}}
+
+  div.col-lg-10
+    ui-view

@@ -1,0 +1,5 @@
+h2 Users
+
+ul
+  div(ng-repeat="user in users")
+    a(ui-sref="user({username: user.username})") {{user.username}}

@@ -62,7 +62,7 @@ var lib = {
       function(cb6) {
         delFiles = [
           path.join(instancePath, 'app/{/,*}'),
-          path.join(instancePath, 'users/{/,*}')
+          path.join(instancePath, 'eee-users/{/,*}')
         ];
 
         del(delFiles, cb6);

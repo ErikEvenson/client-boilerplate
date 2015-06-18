@@ -7,11 +7,12 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "angular": "1.4.0",
+    "angular": "1.4.1",
     "angular-bootstrap-npm": "0.13.0",
-    "angular-resource": "1.4.0",
-    "angular-route": "1.4.0",
-    "debug": "2.2.0"
+    "angular-resource": "1.4.1",
+    "angular-ui-router": "0.2.15",
+    "debug": "2.2.0",
+    "lodash": "3.9.3"
   },
   "engines": {
     "node": "0.12.2"
@@ -21,16 +22,15 @@
     "url": "https://github.com/ErikEvenson/study-node-heroku"
   },
   "keywords": [
-    "node",
-    "heroku",
-    "express"
+    "node"
   ],
   "license": "MIT",
   "devDependencies": {
-    "angular-mocks": "1.4.0",
+    "angular-mocks": "1.4.1",
     "async": "1.0.0",
     "aws-sdk": "2.1.32",
     "browserify": "10.2.4",
+    "browserify-ngannotate": "1.0.1",
     "chai": "2.3.0",
     "connect": "3.3.5",
     "del": "1.2.0",
@@ -47,11 +47,14 @@
     "gulp-rename": "1.2.2",
     "gulp-shell": "0.4.2",
     "gulp-util": "3.0.4",
+    "jasmine-core": "2.3.4",
+    "karma": "0.12.36",
     "karma-browserify": "4.2.1",
     "karma-jasmine": "0.3.5",
     "karma-phantomjs-launcher": "0.2.0",
     "map-stream": "0.0.5",
     "mkdirp": "0.5.1",
+    "phantomjs": "1.9.17",
     "serve-static": "1.9.3",
     "uuid": "2.0.1",
     "vinyl-source-stream": "1.1.0",

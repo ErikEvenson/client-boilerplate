@@ -1,4 +1,5 @@
 var
+  annotate = require('browserify-ngannotate'),
   argv = require('yargs').argv,
   browserify = require('browserify'),
   config = require('../config'),
@@ -10,6 +11,7 @@ var
 var lib = {
   browserify: function(options, done) {
     return browserify(options.main)
+      .transform(annotate)
       .bundle()
       .pipe(source(path.basename(options.bundle)))
       .pipe(gulp.dest(path.dirname(options.bundle)))
