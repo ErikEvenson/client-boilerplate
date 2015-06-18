@@ -1,5 +1,6 @@
 angular.module('eee-users')
   .config(function($stateProvider) {
+    // Groups
     var groupsRoot = {
       abstract: true,
       name: 'groupsRoot',
@@ -22,6 +23,7 @@ angular.module('eee-users')
       url: '/:groupId'
     }
 
+    // Users
     var usersRoot = {
       abstract: true,
       name: 'usersRoot',
@@ -38,6 +40,20 @@ angular.module('eee-users')
       url: ''
     }
 
+    var newUser = {
+      name:'newUser',
+      parent: usersRoot,
+      template: 'NEW USER',
+      url: '/new'
+    }
+
+    var editUser = {
+      name:'editUser',
+      parent: usersRoot,
+      template: 'EDIT USER',
+      url: '/:username/edit'
+    }
+
     var user = {
       name:'user',
       parent: usersRoot,
@@ -51,5 +67,7 @@ angular.module('eee-users')
       .state(group)
       .state(usersRoot)
       .state(users)
+      .state(newUser)
+      .state(editUser)
       .state(user);
   });
