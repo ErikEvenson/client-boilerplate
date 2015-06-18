@@ -1,29 +1,26 @@
 angular.module('app')
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
       .state('home', {
-        url: '/home',
-        views: {
-          '': {
-            controller: 'MainController',
-            templateUrl: 'app.home.html'
-          },
-          'topNav@home': {
-            controller: 'TopNavController',
-            templateUrl: 'app.home.topNav.html'
-          },
-          'leftNav@home': {
-            controller: 'LeftNavController',
-            templateUrl: 'app.home.leftNav.html'
-          },
-          'content@home': {
-            controller: 'ContentController',
-            templateUrl: 'app.home.content.html'
-          }
-        }
+        controller: 'MainController',
+        templateUrl: 'app.home.html'
       })
+      .state('home.content', {
+        controller: 'ContentController',
+        templateUrl: 'app.home.content.html'
+      })
+      .state('home.content.default', {
+        // controller: ''
+        templateUrl: 'app.home.content.default.html',
+        url: '/'
+      })
+      .state('home.content.users', {
+        // controller: ''
+        template: 'app.home.content.users.html',
+        url: '/users'
+      });      
   });
 
 angular.module('app')

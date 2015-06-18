@@ -1,7 +1,9 @@
-ui-view(name="topNav")
+nav.navbar.navbar-inverse(role="navigation")
+  div.navbar-header
+    a.navbar-brand(ui-sref="home") {{ brand }}
 
-div.row
-  div.col-lg-2
-    ui-view(name="leftNav")
-  div.col-lg-10
-    ui-view(name="content")
+  ul.nav.navbar-nav
+    li
+      a(ui-sref="home.content.default") Home
+
+ui-view
