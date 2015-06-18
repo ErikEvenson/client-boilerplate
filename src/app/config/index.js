@@ -3,12 +3,14 @@ angular.module('app')
     $urlRouterProvider.otherwise('/home');
 
     var main = {
+      abstract: true,
       controller: 'MainController',
       name: 'main',
       templateUrl: 'app.main.html'
     };
 
     var content = {
+      abstract: true,
       controller: 'ContentController',
       name: 'content',
       parent: main,

@@ -1,20 +1,54 @@
 angular.module('eee.users')
   .config(function($stateProvider) {
-    var groups = {
-      name: 'groups',
+    var groupsRoot = {
+      abstract: true,
+      name: 'groupsRoot',
       parent: 'content',
-      template: 'eee.users.groups.html',
+      template: '<ui-view/>',
       url: '/groups'
     };
 
-    var users = {
-      name: 'users',
+    var groups = {
+      name:'groups',
+      parent: groupsRoot,
+      template: 'GROUPS LIST',
+      url: ''
+    }
+
+    var group = {
+      name:'group',
+      parent: groupsRoot,
+      template: 'GROUPS DETAIL',
+      url: '/:groupId'
+    }
+
+    var usersRoot = {
+      abstract: true,
+      name: 'usersRoot',
       parent: 'content',
-      template: 'eee.users.users.html',
+      template: '<ui-view/>',
       url: '/users'
     };
 
+    var users = {
+      name:'users',
+      parent: usersRoot,
+      template: 'USERS LIST',
+      url: ''
+    }
+
+    var user = {
+      name:'user',
+      parent: usersRoot,
+      template: 'USERS DETAIL',
+      url: '/:userId'
+    }
+
     $stateProvider
+      .state(groupsRoot)
       .state(groups)
-      .state(users);
+      .state(group)
+      .state(usersRoot)
+      .state(users)
+      .state(user);
   });
