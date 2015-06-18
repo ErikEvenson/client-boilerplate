@@ -1,3 +1,5 @@
-p USERS LIST
+h2 Users
 
-p {{users}}
+ul
+  div(ng-repeat="user in users")
+    a(ui-sref="user({username: user.username})") {{user.username}}

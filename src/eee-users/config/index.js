@@ -31,7 +31,7 @@ angular.module('eee-users')
     };
 
     var users = {
-      // controller: 'UsersController',
+      controller: 'UsersController',
       name:'users',
       parent: usersRoot,
       templateUrl: 'eee-users.users.html',
@@ -42,7 +42,7 @@ angular.module('eee-users')
       name:'user',
       parent: usersRoot,
       template: 'USERS DETAIL',
-      url: '/:userId'
+      url: '/:username'
     }
 
     $stateProvider

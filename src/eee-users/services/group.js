@@ -1,9 +1,9 @@
 require('angular');
 
 angular.module('eee-users')
-  .factory('Groups', function() {
+  .factory('Group', function() {
     function Group(args) {
-      // fields
+      this.name = args.name;
     }
 
     return Group;

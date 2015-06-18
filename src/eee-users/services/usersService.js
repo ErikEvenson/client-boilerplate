@@ -1,13 +1,16 @@
-require('angular');
-
 angular.module('eee-users')
-  .factory('UsersService', function(Groups, Users) {
+  .factory('UsersService', function(Group, User) {
     var service = {};
-    var groups = {};
-    var users = {};
+    var groups = [];
+    var users = [];
 
-    service.getGroups = function() {};
-    service.getUsers = function() {};
+    service.getGroups = function() {
+      return groups;
+    };
+    
+    service.getUsers = function() {
+      return users;
+    };
 
     var setupInitialGroups = function() {
       groups.push(new Group({

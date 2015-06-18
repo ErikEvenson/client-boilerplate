@@ -10,6 +10,7 @@ angular.module('eee-users')
 
       var init = function () {
         $scope.users = UsersService.getUsers();
+        console.log("XXXX", $scope.users);
       };
 
       init();

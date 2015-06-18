@@ -1,3 +1,3 @@
-require('./groups');
-require('./users');
+require('./group');
+require('./user');
 require('./usersService');
