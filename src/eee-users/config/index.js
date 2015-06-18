@@ -31,9 +31,10 @@ angular.module('eee-users')
     };
 
     var users = {
+      // controller: 'UsersController',
       name:'users',
       parent: usersRoot,
-      template: 'USERS LIST',
+      templateUrl: 'eee-users.users.html',
       url: ''
     }
 
