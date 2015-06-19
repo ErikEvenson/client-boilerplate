@@ -10,12 +10,11 @@ angular.module('eee-users')
   .controller(
     'UserController',
     function($scope, user, UsersService) {
-      $scope.user = angular.copy(user);
-
+      $scope.user = user;
+      
       $scope.save = function() {
         if ($scope.userForm.$invalid) return;
         UsersService.updateUser($scope.user);
-        $scope.user = angular.copy($scope.user);
         $scope.userForm.$setPristine();
       };
 

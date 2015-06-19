@@ -1,4 +1,4 @@
-h2 {{user.username}} ({{user.email}}) #[small user]
+h2 {{user.username}} #[small user] {{userForm.$dirty?'*':''}}
 
 div.btn-toolbar
   a(ui-sref="users")

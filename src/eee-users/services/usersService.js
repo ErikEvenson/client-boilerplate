@@ -14,24 +14,24 @@ angular.module('eee-users')
       otherUser = _.find(users, {username: user.username});
 
       if (user.username && !otherUser) {
-        users.push(user);
+        users.push(angular.copy(user));
         return user;
       }
     };
 
     service.updateUser = function(user) {
       var index = _.findIndex(users, {username: user.username});
-      users[index] = user;
+      users[index] = angular.copy(user);
       return user;
     };
 
     service.getUser = function(options) {
       var user = _.find(users, options);
-      return user;
+      return angular.copy(user);
     };
 
     service.getUsers = function() {
-      return users;
+      return angular.copy(users);
     };
 
     var setupInitialGroups = function() {
