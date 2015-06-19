@@ -10,6 +10,8 @@ angular.module('eee-users')
   .controller(
     'UserController',
     function($scope, user) {
-      $scope.title = user.username;
+      $scope.email = user.email;
+      $scope.name = user.name;
+      $scope.username = user.username;
     }
   );

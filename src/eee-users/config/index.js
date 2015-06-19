@@ -10,18 +10,18 @@ angular.module('eee-users')
     };
 
     var groups = {
-      name:'groups',
+      name: 'groups',
       parent: groupsRoot,
       template: 'GROUPS LIST',
       url: ''
-    }
+    };
 
     var group = {
-      name:'group',
+      name: 'group',
       parent: groupsRoot,
       template: 'GROUPS DETAIL',
       url: '/:groupId'
-    }
+    };
 
     // Users
     var usersRoot = {
@@ -34,7 +34,7 @@ angular.module('eee-users')
 
     var users = {
       controller: 'UsersController',
-      name:'users',
+      name: 'users',
       parent: usersRoot,
       resolve: {
         users: function(UsersService) {
@@ -43,25 +43,25 @@ angular.module('eee-users')
       },
       templateUrl: 'eee-users.users.html',
       url: ''
-    }
+    };
 
     var newUser = {
-      name:'newUser',
+      name: 'newUser',
       parent: usersRoot,
       template: 'NEW USER',
       url: '/new'
-    }
+    };
 
     var editUser = {
-      name:'editUser',
+      name: 'editUser',
       parent: usersRoot,
       template: 'EDIT USER',
       url: '/:username/edit'
-    }
+    };
 
     var user = {
       controller: 'UserController',
-      name:'user',
+      name: 'user',
       parent: usersRoot,
       resolve: {
         user: function($stateParams, UsersService) {
@@ -71,7 +71,7 @@ angular.module('eee-users')
       },
       templateUrl: 'eee-users.user.html',
       url: '/:username'
-    }
+    };
 
     $stateProvider
       .state(groupsRoot)

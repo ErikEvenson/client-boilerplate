@@ -1,3 +1,38 @@
-h2 {{title}} #[small user]
+h2 {{username}} ({{email}}) #[small user]
 
-p USER DETAIL
+div.btn-toolbar
+  a(ui-sref="users")
+    button.btn.btn-primary Back to user list
+
+hr
+
+form(name="userForm")
+  div.row
+    div.col-md-4
+      div.form-group
+        label.control-label(for="username") Username:
+        input#email.form-control(disabled, readonly, type="text", name="username", ng-model="username")
+
+    div.col-md-4
+      div.form-group
+        label.control-label(for="name.first") First name:
+        input#email.form-control(type="text", name="name.first", ng-model="name.first")
+
+    div.col-md-4
+      div.form-group
+        label.control-label(for="email") Last name:
+        input#email.form-control(type="text", name="name.last", ng-model="name.last")
+
+  div.row
+    div.col-md-4
+      div.form-group
+        label.control-label(for="email") Email:
+        input#email.form-control(type="email", name="email", ng-model="email")
+
+hr
+
+div.btn-toolbar
+  button.btn.btn-primary Submit
+
+  a(ui-sref="users")
+    button.btn.btn-danger Cancel

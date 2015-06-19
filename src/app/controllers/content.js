@@ -13,6 +13,6 @@ angular.module('app')
           state: 'users',
           title: 'Users'
         }
-      ]
+      ];
     }
   );

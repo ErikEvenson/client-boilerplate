@@ -14,7 +14,7 @@ angular.module('eee-users')
       var user = _.find(users, options);
       return user;
     };
-    
+
     service.getUsers = function() {
       return users;
     };
@@ -49,7 +49,7 @@ angular.module('eee-users')
       }));
     };
 
-    var init = function () {
+    var init = function() {
       setupInitialGroups();
       setupInitialUsers();
     };
