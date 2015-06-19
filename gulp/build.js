@@ -52,17 +52,26 @@ var lib = {
       // Browserify
       function(cb5) {
         browserify.browserify({
-          bundle: path.join(instancePath, 'js/app.js'),
+          bundle: path.join(instancePath, 'app/public/js/app.js'),
           main: path.join(instancePath, 'app/app.js')
         }, cb5);
       },
       // Minify
       // ...
+      // Move public files
+      function(cb) {
+        var publicFiles = path.join(instancePath, 'app/public/**/*');
+        var publicDir = path.join(instancePath, 'public');
+
+        gulp.src(publicFiles)
+          .pipe(gulp.dest(publicDir))
+          .on('end', cb);
+      },
       // Remove extraneous files
       function(cb6) {
         delFiles = [
-          path.join(instancePath, 'app/{/,*}'),
-          path.join(instancePath, 'eee-users/{/,*}')
+          path.join(instancePath, 'app/**/{/,*}'),
+          path.join(instancePath, 'eee-users/**/{/,*}')
         ];
 
         del(delFiles, cb6);

@@ -1,13 +1,16 @@
 var
   path = require('path');
 
+var basepath = path.join(__dirname, '..');
+
 module.exports = {
   aws: {
     bucket: 'eeegen',
     region: 'us-west-2'
   },
-  basepath: path.join(__dirname, '..'),
-  instances: path.join(__dirname, '../instances'),
-  secrets: path.join(__dirname, '../secrets'),
-  temp: path.join(__dirname, '../temp')
+  basepath: basepath,
+  instances: path.join(basepath, 'instances'),
+  secrets: path.join(basepath, 'secrets'),
+  server: path.join(basepath, '../server-boilerplate'),
+  temp: path.join(basepath, 'temp')
 };

@@ -1,7 +1,7 @@
 var _ = require('lodash');
 
 angular.module('eee-users')
-  .factory('UsersService', function(Group, User) {
+  .factory('UsersService', function($http, Group, User) {
     var service = {};
     var groups = [];
     var users = [];
@@ -33,6 +33,11 @@ angular.module('eee-users')
     service.getUsers = function() {
       return angular.copy(users);
     };
+
+    // service.getUsers = function() {
+    //   var collectionsUrl = 'http://localhost/api';
+    //   return $http.get(collectionsUrl + '/users');
+    // };
 
     var setupInitialGroups = function() {
       groups.push(new Group({
