@@ -21,15 +21,13 @@ angular.module('eee-users')
     };
 
     service.updateUser = function(user) {
-      var index = _.findIndex(users, {username: user.username});
-      users[index] = angular.copy(user);
-      return user;
-    };
+      var username = user.username;
 
-    // service.getUser = function(options) {
-    //   var user = _.find(users, options);
-    //   return angular.copy(user);
-    // };
+      return $http.post(apiUrl + '/users/' + username, user)
+        .then(function(res) {
+          return res.data;
+        });
+    };
 
     service.getUser = function(options) {
       var username = options.username;
