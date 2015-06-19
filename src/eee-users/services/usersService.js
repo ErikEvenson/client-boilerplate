@@ -2,6 +2,7 @@ var _ = require('lodash');
 
 angular.module('eee-users')
   .factory('UsersService', function($http, Group, User) {
+    var apiUrl = '/api';
     var service = {};
     var groups = [];
     var users = [];
@@ -25,19 +26,26 @@ angular.module('eee-users')
       return user;
     };
 
+    // service.getUser = function(options) {
+    //   var user = _.find(users, options);
+    //   return angular.copy(user);
+    // };
+
     service.getUser = function(options) {
-      var user = _.find(users, options);
-      return angular.copy(user);
+      var username = options.username;
+
+      return $http.get(apiUrl + '/users/' + username)
+        .then(function(res) {
+          return res.data;
+        });
     };
 
     service.getUsers = function() {
-      return angular.copy(users);
+      return $http.get(apiUrl + '/users')
+        .then(function(res) {
+          return res.data;
+        });
     };
-
-    // service.getUsers = function() {
-    //   var collectionsUrl = 'http://localhost/api';
-    //   return $http.get(collectionsUrl + '/users');
-    // };
 
     var setupInitialGroups = function() {
       groups.push(new Group({

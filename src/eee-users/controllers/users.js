@@ -12,11 +12,11 @@ angular.module('eee-users')
     function($scope, user, UsersService) {
       $scope.user = user;
       
-      $scope.save = function() {
-        if ($scope.userForm.$invalid) return;
-        UsersService.updateUser($scope.user);
-        $scope.userForm.$setPristine();
-      };
+      // $scope.save = function() {
+      //   if ($scope.userForm.$invalid) return;
+      //   UsersService.updateUser($scope.user);
+      //   $scope.userForm.$setPristine();
+      // };
 
       // $scope.$watch('email', function(newValue, oldValue) {
       //   console.log("XXX", newValue, oldValue);
