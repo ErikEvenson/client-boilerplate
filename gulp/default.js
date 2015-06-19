@@ -12,7 +12,7 @@ gulp.task('default', function(done) {
     clean: argv.clean || false,
     instance: argv.instance || 'development',
     port: argv.port || 8080,
-    public: argv.publicDir || config.publicDir;
+    serverDir: argv.serverDir || config.serverDir,
     source: argv.source || 'src'
   };
 
@@ -22,8 +22,8 @@ gulp.task('default', function(done) {
   );
 
   build.buildInstance(options, function(err) {
-    publicFiles = path.join(config.instances, instance, 'public');
-    publicDir = path.join(config.server, 'instances', instance, 'public');
+    publicFiles = path.join(config.instances, options.instance, 'public/**/*');
+    publicDir = path.join(options.serverDir, 'instances', options.instance, 'public');
     gutil.log('Moving public files to server at ' + publicDir);
 
     gulp.src(publicFiles)

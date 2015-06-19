@@ -11,6 +11,6 @@ module.exports = {
   basepath: basepath,
   instances: path.join(basepath, 'instances'),
   secrets: path.join(basepath, 'secrets'),
-  server: path.join(basepath, '../server-boilerplate'),
+  serverDir: path.join(basepath, '../server-boilerplate'),
   temp: path.join(basepath, 'temp')
 };
