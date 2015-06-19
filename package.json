@@ -9,6 +9,7 @@
   "dependencies": {
     "angular": "1.4.1",
     "angular-bootstrap-npm": "0.13.0",
+    "angular-messages": "1.4.1",
     "angular-resource": "1.4.1",
     "angular-ui-router": "0.2.15",
     "debug": "2.2.0",

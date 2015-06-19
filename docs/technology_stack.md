@@ -18,6 +18,7 @@ These are the technologies used in this project.
 
 - [angular](https://www.npmjs.com/package/angular) 1.4.1 - HTML enhanced for web apps
 - [angular-bootstrap-npm](https://www.npmjs.com/package/angular-bootstrap-npm) 0.13.0 - An NPM package for using UI.Bootstrap directives with Node projects (via Browserify, etc.)
+- [angular-messages]() 1.4.1
 - [angular-mocks](https://www.npmjs.com/package/angular-mocks) 1.4.1 - AngularJS mocks for testing
 - [angular-resource](https://www.npmjs.com/package/angular-resource) 1.4.1 - AngularJS module for interacting with RESTful server-side data sources
 - [angular-ui-router](https://www.npmjs.com/package/angular-ui-router) 0.2.15 - State-based routing for AngularJS

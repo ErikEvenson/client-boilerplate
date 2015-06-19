@@ -1,4 +1,4 @@
-h2 {{username}} ({{email}}) #[small user]
+h2 {{user.username}} ({{user.email}}) #[small user]
 
 div.btn-toolbar
   a(ui-sref="users")
@@ -6,33 +6,47 @@ div.btn-toolbar
 
 hr
 
-form(name="userForm")
+form(name="userForm", novalidate)
   div.row
     div.col-md-4
       div.form-group
         label.control-label(for="username") Username:
-        input#email.form-control(disabled, readonly, type="text", name="username", ng-model="username")
+
+        input#email.form-control(
+          disabled, readonly, type="text", name="username", ng-model="user.username"
+        )
 
     div.col-md-4
       div.form-group
         label.control-label(for="name.first") First name:
-        input#email.form-control(type="text", name="name.first", ng-model="name.first")
+        input#email.form-control(
+          type="text", name="name.first", ng-model="user.name.first"
+        )
 
     div.col-md-4
       div.form-group
-        label.control-label(for="email") Last name:
-        input#email.form-control(type="text", name="name.last", ng-model="name.last")
+        label.control-label(for="name.last") Last name:
+        
+        input#email.form-control(
+          type="text", name="name.last", ng-model="user.name.last"
+        )
 
   div.row
     div.col-md-4
-      div.form-group
+      div.form-group(ng-class="{'has-error': userForm.email.$error.required}")
         label.control-label(for="email") Email:
-        input#email.form-control(type="email", name="email", ng-model="email")
+        
+        input#email.form-control(
+          type="email", name="email", ng-model="user.email", required
+        )
+
+        div(ng-messages="userForm.email.$error", ng-if="userForm.email.$dirty")
+          label.control-label(ng-message="required") Email is required.
 
 hr
 
 div.btn-toolbar
-  button.btn.btn-primary Submit
+  button.btn.btn-primary(ng-click="save();") Save
 
   a(ui-sref="users")
     button.btn.btn-danger Cancel

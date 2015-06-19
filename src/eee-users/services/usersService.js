@@ -10,6 +10,21 @@ angular.module('eee-users')
       return groups;
     };
 
+    service.addUser = function(user) {
+      otherUser = _.find(users, {username: user.username});
+
+      if (user.username && !otherUser) {
+        users.push(user);
+        return user;
+      }
+    };
+
+    service.updateUser = function(user) {
+      var index = _.findIndex(users, {username: user.username});
+      users[index] = user;
+      return user;
+    };
+
     service.getUser = function(options) {
       var user = _.find(users, options);
       return user;

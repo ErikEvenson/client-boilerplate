@@ -3,11 +3,13 @@ var
 
 require('angular-ui-router');
 require('angular-bootstrap-npm');
+require('angular-messages');
 
 angular.module(
   'app',
   [
     'eee-users',
+    'ngMessages',
     'ui.router',
     'ui.bootstrap'
   ]
