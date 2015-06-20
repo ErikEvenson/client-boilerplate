@@ -20,6 +20,11 @@
     "angular-bootstrap": "0.13.0",
     "angular-messages": "1.4.1",
     "angular-resource": "1.4.1",
-    "angular-ui-router": "0.2.15"
+    "angular-ui-router": "0.2.15",
+    "angular-ui-grid": "3.0.0-rc.22",
+    "bootstrap": "3.3.5"
+  },
+  "resolutions": {
+    "angular": "1.4.1"
   }
 }

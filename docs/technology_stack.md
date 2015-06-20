@@ -4,19 +4,19 @@ These are the technologies used in this project.
 
 ## CDN-provided
 
-- [bootstrap](http://www.bootstrapcdn.com/) 3.3.4 - Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
-
 ## apt-get-installed
 
 ## bash-installed
 
 ## bower-installed
 
-- [angular](https://www.npmjs.com/package/angular) 1.4.1 - HTML enhanced for web apps
-- [angular-bootstrap](https://www.npmjs.com/package/angular-bootstrap-npm) 0.13.0 - An NPM package for using UI.Bootstrap directives with Node projects (via Browserify, etc.)
+- [angular]() 1.4.1 - HTML enhanced for web apps
+- [angular-bootstrap]() 0.13.0 - An NPM package for using UI.Bootstrap directives with Node projects (via Browserify, etc.)
 - [angular-messages]() 1.4.1
-/www.npmjs.com/package/angular-resource) 1.4.1 - AngularJS module for interacting with RESTful server-side data sources
-- [angular-ui-router](https://www.npmjs.com/package/angular-ui-router) 0.2.15 - State-based routing for AngularJS
+- [angular-resource]() 1.4.1 - AngularJS module for interacting with RESTful server-side data sources
+- [angular-ui-grid]() 3.0.0-rc.22
+- [angular-ui-router]() 0.2.15 - State-based routing for AngularJS
+- [bootstrap](http://www.bootstrapcdn.com/) 3.3.5 - Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
 
 ## gem-installed
 
