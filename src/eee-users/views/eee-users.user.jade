@@ -1,8 +1,7 @@
-h2 {{user.username}} #[small user] {{userForm.$dirty?'*':''}}
+h2 {{user.username}} #[small user {{userForm.$dirty?'(unsaved)':''}}]
 
 div.btn-toolbar
-  a(ui-sref="users")
-    button.btn.btn-primary Back to user list
+  button.btn.btn-primary(ui-sref="users") Back to user list
 
 hr
 
@@ -49,6 +48,4 @@ hr
 div.btn-toolbar
   button.btn.btn-primary(ng-click="save();") Save
   button.btn.btn-danger(ng-click="delete();") Delete
-
-  a(ui-sref="users")
-    button.btn.btn-danger Cancel
+  button.btn.btn-danger(ui-sref="users") Cancel

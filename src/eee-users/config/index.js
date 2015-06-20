@@ -36,11 +36,6 @@ angular.module('eee-users')
       controller: 'UsersController',
       name: 'users',
       parent: usersRoot,
-      resolve: {
-        users: function(UsersService) {
-          return UsersService.getUsers();
-        }
-      },
       templateUrl: 'eee-users.users.html',
       url: ''
     };
@@ -49,11 +44,6 @@ angular.module('eee-users')
       controller: 'UserController',
       name: 'newUser',
       parent: usersRoot,
-      resolve: {
-        user: function(UsersService) {
-          return UsersService.newUser({});
-        }
-      },
       templateUrl: 'eee-users.user.html',
       url: '/new'
     };
@@ -62,12 +52,6 @@ angular.module('eee-users')
       controller: 'UserController',
       name: 'user',
       parent: usersRoot,
-      resolve: {
-        user: function($stateParams, UsersService) {
-          var username = $stateParams.username;
-          return UsersService.getUser({username: username});
-        }
-      },
       templateUrl: 'eee-users.user.html',
       url: '/:username'
     };
