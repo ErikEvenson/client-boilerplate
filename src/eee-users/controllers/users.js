@@ -11,7 +11,19 @@ angular.module('eee-users')
     'UserController',
     function($scope, $state, user, UsersService) {
       $scope.user = user;
-      
+
+      $scope.delete = function() {
+        if ($scope.user.id) {
+          UsersService.deleteUser($scope.user)
+            .then(function() {
+              return $state.go('users');
+            });
+
+        } else {
+          return $state.go('users');
+        }
+      };
+
       $scope.save = function() {
         if ($scope.userForm.$invalid) return;
 
@@ -21,7 +33,7 @@ angular.module('eee-users')
               $scope.userForm.$setPristine();
               return user;
             });
-          
+
         } else {
           UsersService.createUser($scope.user)
             .then(function(user) {

@@ -9,13 +9,18 @@ angular.module('eee-users')
 
     var mapFromServer = function(user) {
       return new User(user);
-    }
+    };
 
     service.createUser = function(user) {
       return $http.post(apiUrl + '/users', user)
         .then(function(res) {
           return mapFromServer(user);
         });
+    };
+
+    service.deleteUser = function(user) {
+      var username = user.username;
+      return $http.delete(apiUrl + '/users/' + username);
     };
 
     service.getGroups = function() {
@@ -50,7 +55,7 @@ angular.module('eee-users')
       return $http.get(apiUrl + '/users')
         .then(function(res) {
           var users = res.data;
-          return _.map(users, mapFromServer)
+          return _.map(users, mapFromServer);
         });
     };
 

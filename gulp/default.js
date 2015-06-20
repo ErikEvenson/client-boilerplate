@@ -23,7 +23,11 @@ gulp.task('default', function(done) {
 
   build.buildInstance(options, function(err) {
     publicFiles = path.join(config.instances, options.instance, 'public/**/*');
-    publicDir = path.join(options.serverDir, 'instances', options.instance, 'public');
+
+    publicDir = path.join(
+      options.serverDir, 'instances', options.instance, 'public'
+    );
+
     gutil.log('Moving public files to server at ' + publicDir);
 
     gulp.src(publicFiles)
