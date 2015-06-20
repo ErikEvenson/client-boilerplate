@@ -13,7 +13,7 @@ form(name="userForm", novalidate)
 
         input#email.form-control(
           type="text", name="username", ng-model="user.username",
-          ng-disabled="user.id", ng-readonly="user.id"
+          ng-disabled="user._id", ng-readonly="user._id"
         )
 
     div.col-md-4
