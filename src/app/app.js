@@ -4,6 +4,7 @@ angular.module(
     'eee-users',
     'ngMessages',
     'ngResource',
+    'ui.grid',
     'ui.router',
     'ui.bootstrap'
   ]

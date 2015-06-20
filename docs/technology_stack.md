@@ -11,6 +11,7 @@ These are the technologies used in this project.
 ## bower-installed
 
 - [angular]() 1.4.1 - HTML enhanced for web apps
+- [angular-animate]() 1.4.1
 - [angular-bootstrap]() 0.13.0 - An NPM package for using UI.Bootstrap directives with Node projects (via Browserify, etc.)
 - [angular-messages]() 1.4.1
 - [angular-resource]() 1.4.1 - AngularJS module for interacting with RESTful server-side data sources

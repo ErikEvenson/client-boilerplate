@@ -3,6 +3,23 @@ angular.module('eee-users')
     'UsersController',
     function($scope, UsersService) {
       $scope.users = UsersService.Users.query()
+
+      $scope.gridOptions = {
+        columnDefs: [
+          {
+            field: 'username',
+            cellTemplate: '<div class="ui-grid-cell-contents"><a ui-sref="user({username:&quot;{{COL_FIELD}}&quot;})">{{COL_FIELD}}</a></div>',
+            type: 'string'
+          },
+          {field: 'name.first', type: 'string'},
+          {field: 'name.last', type: 'string'},
+          {field: 'email', type: 'string'},
+          {field: 'created', type: 'date'}
+        ],
+        data: $scope.users,
+        enableFiltering: true,
+        showGridFooter: true
+      }
     }
   )
   .controller(

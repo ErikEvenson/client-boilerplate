@@ -6,6 +6,5 @@ div.btn-toolbar
 
 hr
 
-ul
-  div(ng-repeat="user in users")
-    a(ui-sref="user({username: user.username})") {{user.username}}, {{user.name.first}}
+div.container
+  div(ui-grid="gridOptions")
