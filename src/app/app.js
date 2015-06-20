@@ -1,11 +1,3 @@
-var
-  angular = require('angular');
-
-require('angular-ui-router');
-require('angular-bootstrap-npm');
-require('angular-messages'),
-require('angular-resource');
-
 angular.module(
   'app',
   [
