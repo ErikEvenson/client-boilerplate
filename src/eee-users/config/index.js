@@ -46,17 +46,16 @@ angular.module('eee-users')
     };
 
     var newUser = {
+      controller: 'UserController',
       name: 'newUser',
       parent: usersRoot,
-      template: 'NEW USER',
+      resolve: {
+        user: function(UsersService) {
+          return UsersService.newUser({});
+        }
+      },
+      templateUrl: 'eee-users.user.html',
       url: '/new'
-    };
-
-    var editUser = {
-      name: 'editUser',
-      parent: usersRoot,
-      template: 'EDIT USER',
-      url: '/:username/edit'
     };
 
     var user = {
@@ -80,6 +79,5 @@ angular.module('eee-users')
       .state(usersRoot)
       .state(users)
       .state(newUser)
-      .state(editUser)
       .state(user);
   });

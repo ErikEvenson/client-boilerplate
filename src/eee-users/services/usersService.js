@@ -7,17 +7,23 @@ angular.module('eee-users')
     var groups = [];
     var users = [];
 
+    var mapFromServer = function(user) {
+      return new User(user);
+    }
+
+    service.createUser = function(user) {
+      return $http.post(apiUrl + '/users', user)
+        .then(function(res) {
+          return mapFromServer(user);
+        });
+    };
+
     service.getGroups = function() {
       return groups;
     };
 
-    service.addUser = function(user) {
-      otherUser = _.find(users, {username: user.username});
-
-      if (user.username && !otherUser) {
-        users.push(angular.copy(user));
-        return user;
-      }
+    service.newUser = function(user) {
+      return new User(user);
     };
 
     service.updateUser = function(user) {
@@ -25,7 +31,8 @@ angular.module('eee-users')
 
       return $http.post(apiUrl + '/users/' + username, user)
         .then(function(res) {
-          return res.data;
+          user = res.data;
+          return mapFromServer(user);
         });
     };
 
@@ -34,53 +41,18 @@ angular.module('eee-users')
 
       return $http.get(apiUrl + '/users/' + username)
         .then(function(res) {
-          return res.data;
+          user = res.data;
+          return mapFromServer(user);
         });
     };
 
     service.getUsers = function() {
       return $http.get(apiUrl + '/users')
         .then(function(res) {
-          return res.data;
+          var users = res.data;
+          return _.map(users, mapFromServer)
         });
     };
-
-    var setupInitialGroups = function() {
-      groups.push(new Group({
-        name: 'group 1'
-      }));
-
-      groups.push(new Group({
-        name: 'group 2'
-      }));
-    };
-
-    var setupInitialUsers = function() {
-      users.push(new User({
-        email: 'erik.e.evenson@gmail.com',
-        name: {
-          first: 'Erik',
-          last: 'Evenson'
-        },
-        username: 'eevenson'
-      }));
-
-      users.push(new User({
-        email: 'joe.doe@example.com',
-        name: {
-          first: 'Joe',
-          last: 'Doe'
-        },
-        username: 'jdoe'
-      }));
-    };
-
-    var init = function() {
-      setupInitialGroups();
-      setupInitialUsers();
-    };
-
-    init();
 
     return service;
   });

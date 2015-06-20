@@ -1,5 +1,11 @@
 h2 Users
 
+div.btn-toolbar
+  a(ui-sref="newUser")
+    button.btn.btn-primary New user
+
+hr
+
 ul
   div(ng-repeat="user in users")
     a(ui-sref="user({username: user.username})") {{user.username}}, {{user.name.first}}

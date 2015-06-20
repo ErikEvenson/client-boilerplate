@@ -9,13 +9,26 @@ angular.module('eee-users')
   )
   .controller(
     'UserController',
-    function($scope, user, UsersService) {
+    function($scope, $state, user, UsersService) {
       $scope.user = user;
       
       $scope.save = function() {
         if ($scope.userForm.$invalid) return;
-        UsersService.updateUser($scope.user);
-        $scope.userForm.$setPristine();
+
+        if ($scope.user.id) {
+          UsersService.updateUser($scope.user)
+            .then(function(user) {
+              $scope.userForm.$setPristine();
+              return user;
+            });
+          
+        } else {
+          UsersService.createUser($scope.user)
+            .then(function(user) {
+              $state.go('user', {username: user.username});
+              return user;
+            });
+        }
       };
 
       // $scope.$watch('email', function(newValue, oldValue) {
