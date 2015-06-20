@@ -20,7 +20,7 @@ angular.module('eee-users')
       }
 
       $scope.delete = function() {
-        if ($scope.user.id) {
+        if ($scope.user._id) {
           $scope.user.$delete({username: $scope.user.username})
             .then(function() {
               return $state.go('users');
@@ -33,7 +33,7 @@ angular.module('eee-users')
       $scope.save = function() {
         if ($scope.userForm.$invalid) return;
 
-        if ($scope.user.id) {
+        if ($scope.user._id) {
           $scope.user.$update({username: $scope.user.username})
             .then(function() {
               $scope.userForm.$setPristine();

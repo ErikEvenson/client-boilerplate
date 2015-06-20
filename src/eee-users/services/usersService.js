@@ -1,21 +1,14 @@
 var _ = require('lodash');
 
 angular.module('eee-users')
-  .factory('UsersService', function($http, $resource, User) {
+  .factory('UsersService', function($http, $resource) {
     var apiUrl = '/api';
     var service = {};
+    var apiVersion = '/v1';
 
     service.Users = $resource(
-      apiUrl + "/users/:username", {}, {update: {method: 'PUT'}}
+      apiUrl + apiVersion + "/users/:username", {}, {update: {method: 'PUT'}}
     );
-
-    // var mapFromServer = function(user) {
-    //   return new User(user);
-    // };
-
-    service.getNewUser = function(user) {
-      return new User(user);
-    };
 
     return service;
   });
