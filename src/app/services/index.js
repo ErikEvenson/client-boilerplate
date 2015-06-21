@@ -6,36 +6,34 @@ angular.module('app')
       apiKey = key;
     };
 
-    this.$get = [
-      function() {
-        return {
-          'request': function(config) {
-            console.log('REQUEST', config);
-            return config;
-          },
-          'requestError': function(rejection) {
-            console.log('REQUEST ERROR: ', rejection);
+    this.$get = function($q) {
+      return {
+        'request': function(config) {
+          console.log('REQUEST', config);
+          return config;
+        },
+        'requestError': function(rejection) {
+          console.log('REQUEST ERROR: ', rejection);
 
-            // if (canRecover(rejection)) {
-            //   return responseOrNewPromise
-            // }
+          // if (canRecover(rejection)) {
+          //   return responseOrNewPromise
+          // }
 
-            return $q.reject(rejection);
-          },
-          'response': function(config) {
-            console.log('RESPONSE', config);
-            return config;
-          },
-          'responseError': function(rejection) {
-            console.log('RESPONSE ERROR: ', rejection);
+          return $q.reject(rejection);
+        },
+        'response': function(config) {
+          console.log('RESPONSE', config);
+          return config;
+        },
+        'responseError': function(rejection) {
+          console.log('RESPONSE ERROR: ', rejection);
 
-            // if (canRecover(rejection)) {
-            //   return responseOrNewPromise
-            // }
+          // if (canRecover(rejection)) {
+          //   return responseOrNewPromise
+          // }
 
-            return $q.reject(rejection);
-          }
-        };
-      }
-    ];
+          return $q.reject(rejection);
+        }
+      };
+    };
   });
