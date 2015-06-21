@@ -1,3 +1,9 @@
+// angular.module('app')
+//   .config(function($httpProvider, InterceptorProvider) {
+//     InterceptorProvider.setApiKey('something');
+//     $httpProvider.interceptors.push('Interceptor');
+//   });
+
 angular.module('app')
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');

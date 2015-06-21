@@ -7,7 +7,7 @@ angular.module('eee-users')
     var apiVersion = '/v1';
 
     service.Users = $resource(
-      apiUrl + apiVersion + "/users/:username", {}, {update: {method: 'PUT'}}
+      apiUrl + apiVersion + '/users/:username', {}, {update: {method: 'PUT'}}
     );
 
     return service;

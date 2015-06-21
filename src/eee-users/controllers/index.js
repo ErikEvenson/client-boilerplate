@@ -2,7 +2,7 @@ angular.module('eee-users')
   .controller(
     'UsersController',
     function($scope, UsersService) {
-      $scope.users = UsersService.Users.query()
+      $scope.users = UsersService.Users.query();
 
       $scope.gridOptions = {
         columnDefs: [
@@ -19,7 +19,7 @@ angular.module('eee-users')
         data: $scope.users,
         enableFiltering: true,
         showGridFooter: true
-      }
+      };
     }
   )
   .controller(
