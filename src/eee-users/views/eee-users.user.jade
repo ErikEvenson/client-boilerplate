@@ -11,7 +11,7 @@ form(name="userForm", novalidate)
       div.form-group
         label.control-label(for="username") Username:
 
-        input#email.form-control(
+        input#username.form-control(
           type="text", name="username", ng-model="user.username",
           ng-disabled="user._id", ng-readonly="user._id"
         )
@@ -19,7 +19,7 @@ form(name="userForm", novalidate)
     div.col-md-4
       div.form-group
         label.control-label(for="name.first") First name:
-        input#email.form-control(
+        input#name-first.form-control(
           type="text", name="name.first", ng-model="user.name.first"
         )
 
@@ -27,7 +27,7 @@ form(name="userForm", novalidate)
       div.form-group
         label.control-label(for="name.last") Last name:
         
-        input#email.form-control(
+        input#name-last.form-control(
           type="text", name="name.last", ng-model="user.name.last"
         )
 
