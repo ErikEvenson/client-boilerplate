@@ -1,11 +1,11 @@
-angular.module('eee-users')
+angular.module('eee-auth')
   .controller(
     'LoginController',
     function($modal, $scope) {
       var dialog = $modal.open({
         // backdrop: false,
         controller: 'LoginInstanceController',
-        templateUrl: 'eee-users.login.html',
+        templateUrl: 'eee-auth.login.html',
         scope: $scope.$new(true),
         size: 'lg'
         // windowTemplateUrl: null

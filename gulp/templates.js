@@ -18,6 +18,7 @@ var lib = {
 
     var files = [
       path.join(instancePath, 'app/views/*.jade'),
+      path.join(instancePath, 'eee-auth/views/*.jade'),
       path.join(instancePath, 'eee-users/views/*.jade')
     ];
 

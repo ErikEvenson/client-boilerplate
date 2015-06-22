@@ -1,57 +1,5 @@
 angular.module('eee-users')
-  .config(function($httpProvider, AuthInterceptorProvider) {
-    $httpProvider.interceptors.push('AuthInterceptor');
-  });
-
-angular.module('eee-users')
   .config(function($stateProvider) {
-    // Auth
-    var login = {
-      controller: 'LoginController',
-      name: 'login',
-      parent: 'content',
-      // template: '<p>XXXXX</p>',
-      url: '/login'
-    };
-
-    var registration = {
-      controller: 'RegistrationController',
-      name: 'registration',
-      parent: 'main',
-      templateUrl: 'eee-users.registration.html',
-      url: '/registration'
-    };
-
-    var registrationConfirmation = {
-      name: 'registrationConfirmation',
-      parent: 'main',
-      templateUrl: 'eee-users.registrationConfirmation.html',
-      url: '/registrationConfirmation'
-    };
-
-    // Groups
-    var groupsRoot = {
-      abstract: true,
-      name: 'groupsRoot',
-      parent: 'content',
-      template: '<ui-view/>',
-      url: '/groups'
-    };
-
-    var groups = {
-      name: 'groups',
-      parent: groupsRoot,
-      template: 'GROUPS LIST',
-      url: ''
-    };
-
-    var group = {
-      name: 'group',
-      parent: groupsRoot,
-      template: 'GROUPS DETAIL',
-      url: '/:groupId'
-    };
-
     // Users
     var usersRoot = {
       abstract: true,
@@ -86,24 +34,8 @@ angular.module('eee-users')
     };
 
     $stateProvider
-      .state(login)
-      .state(registration)
-      .state(registrationConfirmation)
-      .state(groupsRoot)
-      .state(groups)
-      .state(group)
       .state(usersRoot)
       .state(users)
       .state(newUser)
       .state(user);
-  });
-
-angular.module('eee-users')
-  .run(function($rootScope, $state){
-    $rootScope.$on('unauthorized', function(error) {
-      console.log("unauthorized", error);
-      $state.go('login');
-      // ifs for errors...
-      // $state.go('404');
-    });
   });

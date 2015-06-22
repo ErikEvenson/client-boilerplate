@@ -1,6 +1,7 @@
 angular.module(
   'app',
   [
+    'eee-auth',
     'eee-users',
     'ngMessages',
     'ngResource',
@@ -16,6 +17,7 @@ require('./services');
 require('./controllers');
 
 // Modules
+require('../eee-auth');
 require('../eee-users');
 
 // Finally, bootstrap the angular app
