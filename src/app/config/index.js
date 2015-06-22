@@ -25,7 +25,7 @@ angular.module('app')
 
     var home = {
       name: 'home',
-      parent: content,
+      parent: main,
       templateUrl: 'app.home.html',
       url: '/home'
     };

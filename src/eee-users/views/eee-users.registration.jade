@@ -1,0 +1,106 @@
+div.container
+  h2 Registration
+
+  hr
+
+  form(name="registrationForm", novalidate)
+    div.row
+      div.col-md-4
+        div.form-group(ng-class="{'has-error': registrationForm.first.$invalid && registrationForm.first.$touched}")
+          div.form-group
+            label.control-label(for="first") First name:
+            input#name-first.form-control(
+              type="text", name="first", ng-model="user.name.first", required,
+              placeholder="First name"
+            )
+
+            div(
+              ng-messages="registrationForm.first.$error",
+              ng-if="registrationForm.first.$touched"
+            )
+              label.control-label(
+                ng-message="required"
+              ) A first name is required.
+
+      div.col-md-4
+        div.form-group(ng-class="{'has-error': registrationForm.last.$invalid && registrationForm.last.$touched}")
+          div.form-group
+            label.control-label(for="last") Last name:
+            input#name-first.form-control(
+              type="text", name="last", ng-model="user.name.last", required,
+              placeholder="Last name"
+            )
+
+            div(
+              ng-messages="registrationForm.last.$error",
+              ng-if="registrationForm.last.$touched"
+            )
+              label.control-label(
+                ng-message="required"
+              ) A last name is required.
+
+      div.col-md-4
+        div.form-group(ng-class="{'has-error': registrationForm.username.$invalid && registrationForm.username.$touched}")
+          label.control-label(for="username") Username:
+
+          input#username.form-control(
+            minlength="8",
+            name="username",
+            ng-model="user.username",
+            ng-model-options="{'updateOn': 'blur'}",
+            placeholder="username",
+            remote-validator="uniqueUsername",
+            remote-validator-function="uniqueUsername(username)",
+            required,
+            type="text"
+          )
+
+          div(
+            ng-messages="registrationForm.username.$error",
+            ng-if="registrationForm.username.$touched"
+          )
+            label.control-label(ng-message="required") A username is required.
+            label.control-label(ng-message="minlength") Usernames must be at least 8 characters long.
+
+            label.control-label(
+              ng-message="uniqueUsername"
+            ) That username is taken.
+
+    div.row
+      div.col-md-4
+        div.form-group(
+          ng-class="{'has-error': registrationForm.email.$invalid && registrationForm.email.$touched}"
+        )
+          label.control-label(for="email") Email:
+          
+          input#email.form-control(
+            type="email", name="email", ng-model="user.email",
+            placeholder="Email", required
+          )
+
+          div(ng-messages="registrationForm.email.$error", ng-if="registrationForm.email.$touched")
+            label.control-label(ng-message="required") An email is required.
+            label.control-label(ng-message="email") Please enter a valid email.
+
+      div.col-md-4
+        div.form-group(
+          ng-class="{'has-error': registrationForm.password.$invalid && registrationForm.password.$touched}"
+        )
+          label.control-label(for="password") Password:
+          
+          input#email.form-control(
+            type="password", name="password", ng-model="user.password",
+            placeholder="Password", required, minlength="8"
+          )
+
+          div(ng-messages="registrationForm.password.$error", ng-if="registrationForm.password.$touched")
+            label.control-label(ng-message="required") A password is required.
+            lable.control-label(ng-message="minlength") Passwords must be a least 8 characters long.
+
+      div.col-md-4
+        p confirm password TBD
+
+  hr
+
+  div.btn-toolbar
+    button.btn.btn-primary(ng-click="submit();", ng-class="{disabled: registrationForm.$invalid}") Submit

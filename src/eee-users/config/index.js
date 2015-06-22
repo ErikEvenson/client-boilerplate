@@ -14,6 +14,21 @@ angular.module('eee-users')
       url: '/login'
     };
 
+    var registration = {
+      controller: 'RegistrationController',
+      name: 'registration',
+      parent: 'main',
+      templateUrl: 'eee-users.registration.html',
+      url: '/registration'
+    };
+
+    var registrationConfirmation = {
+      name: 'registrationConfirmation',
+      parent: 'main',
+      templateUrl: 'eee-users.registrationConfirmation.html',
+      url: '/registrationConfirmation'
+    };
+
     // Groups
     var groupsRoot = {
       abstract: true,
@@ -72,6 +87,8 @@ angular.module('eee-users')
 
     $stateProvider
       .state(login)
+      .state(registration)
+      .state(registrationConfirmation)
       .state(groupsRoot)
       .state(groups)
       .state(group)
