@@ -24,7 +24,7 @@ angular.module('eee-users')
   )
   .controller(
     'UserController',
-    function($scope, $state, $stateParams, UsersService) {
+    function($q, $scope, $state, $stateParams, UsersService) {
       if ($stateParams.username) {
         UsersService.Users
           .get({username: $stateParams.username}, function(user) {
@@ -59,6 +59,18 @@ angular.module('eee-users')
               return $state.go('user', {username: $scope.user.username});
             });
         }
+      };
+
+      $scope.uniqueUsername = function(username) {
+        if (!username || username === $stateParams.username) return $q.when(true);
+
+        return UsersService.Users
+          .get({username: username})
+          .$promise
+          .then(
+            function(data) {return $q.reject();},
+            function(error) {return true;}
+          );
       };
     }
   );

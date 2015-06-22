@@ -8,44 +8,75 @@ hr
 form(name="userForm", novalidate)
   div.row
     div.col-md-4
-      div.form-group
+      div.form-group(ng-class="{'has-error': userForm.username.$invalid && userForm.username.$touched}")
         label.control-label(for="username") Username:
 
         input#username.form-control(
-          type="text", name="username", ng-model="user.username",
-          ng-disabled="user._id", ng-readonly="user._id"
+          name="username",
+          ng-model="user.username",
+          ng-model-options="{'updateOn': 'blur'}"
+          ng-disabled="user._id", ng-readonly="user._id",
+          remote-validator="uniqueUsername",
+          remote-validator-function="uniqueUsername(username)",
+          required,
+          type="text"
         )
 
-    div.col-md-4
-      div.form-group
-        label.control-label(for="name.first") First name:
-        input#name-first.form-control(
-          type="text", name="name.first", ng-model="user.name.first"
+        div(
+          ng-messages="userForm.username.$error",
+          ng-if="userForm.username.$touched"
         )
+          label.control-label(ng-message="required") A username is required.
+          
+          label.control-label(
+            ng-message="uniqueUsername"
+          ) That username is taken.
 
     div.col-md-4
-      div.form-group
-        label.control-label(for="name.last") Last name:
-        
-        input#name-last.form-control(
-          type="text", name="name.last", ng-model="user.name.last"
-        )
+      div.form-group(ng-class="{'has-error': userForm.first.$invalid && userForm.first.$touched}")
+        div.form-group
+          label.control-label(for="first") First name:
+          input#name-first.form-control(
+            type="text", name="first", ng-model="user.name.first", required
+          )
+
+          div(
+            ng-messages="userForm.first.$error",
+            ng-if="userForm.first.$touched"
+          )
+            label.control-label(ng-message="required") A first name is required.
+
+    div.col-md-4
+      div.form-group(ng-class="{'has-error': userForm.last.$invalid && userForm.last.$touched}")
+        div.form-group
+          label.control-label(for="last") Last name:
+          input#name-first.form-control(
+            type="text", name="last", ng-model="user.name.last", required
+          )
+
+          div(
+            ng-messages="userForm.last.$error",
+            ng-if="userForm.last.$touched"
+          )
+            label.control-label(ng-message="required") A last name is required.
 
   div.row
     div.col-md-4
-      div.form-group(ng-class="{'has-error': userForm.email.$error.required}")
+      div.form-group(
+        ng-class="{'has-error': userForm.email.$invalid && userForm.email.$touched}"
+      )
         label.control-label(for="email") Email:
         
         input#email.form-control(
           type="email", name="email", ng-model="user.email", required
         )
 
-        div(ng-messages="userForm.email.$error", ng-if="userForm.email.$dirty")
-          label.control-label(ng-message="required") Email is required.
-
+        div(ng-messages="userForm.email.$error", ng-if="userForm.email.$touched")
+          label.control-label(ng-message="required") An email is required.
+          label.control-label(ng-message="email") Please enter a valid email.
 hr
 
 div.btn-toolbar
-  button.btn.btn-primary(ng-click="save();") Save
+  button.btn.btn-primary(ng-click="save();", ng-class="{disabled: userForm.$invalid}") Save
   button.btn.btn-danger(ng-click="delete();") Delete
   button.btn.btn-danger(ui-sref="users") Cancel
