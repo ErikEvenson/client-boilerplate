@@ -1,5 +1,26 @@
 angular.module('eee-users')
   .controller(
+    'LoginController',
+    function($modal, $scope) {
+      var dialog = $modal.open({
+        // backdrop: false,
+        controller: 'LoginInstanceController',
+        templateUrl: 'eee-users.login.html',
+        scope: $scope.$new(true),
+        size: 'lg'
+        // windowTemplateUrl: null
+      }).result['finally'](function() {
+        console.log("FINALLY");
+      });
+    }
+  )
+  .controller(
+    'LoginInstanceController',
+    function($scope, $modalInstance) {
+
+    }
+  )
+  .controller(
     'UsersController',
     function($scope, UsersService) {
       $scope.users = UsersService.Users.query();

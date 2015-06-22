@@ -1,5 +1,19 @@
 angular.module('eee-users')
+  .config(function($httpProvider, AuthInterceptorProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor');
+  });
+
+angular.module('eee-users')
   .config(function($stateProvider) {
+    // Auth
+    var login = {
+      controller: 'LoginController',
+      name: 'login',
+      parent: 'content',
+      // template: '<p>XXXXX</p>',
+      url: '/login'
+    };
+
     // Groups
     var groupsRoot = {
       abstract: true,
@@ -57,6 +71,7 @@ angular.module('eee-users')
     };
 
     $stateProvider
+      .state(login)
       .state(groupsRoot)
       .state(groups)
       .state(group)
@@ -64,4 +79,14 @@ angular.module('eee-users')
       .state(users)
       .state(newUser)
       .state(user);
+  });
+
+angular.module('eee-users')
+  .run(function($rootScope, $state){
+    $rootScope.$on('unauthorized', function(error) {
+      console.log("unauthorized", error);
+      $state.go('login');
+      // ifs for errors...
+      // $state.go('404');
+    });
   });
