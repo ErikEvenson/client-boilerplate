@@ -1,8 +1,8 @@
-angular.module('app')
-  .config(function($httpProvider, AppInterceptorProvider) {
-    AppInterceptorProvider.setApiKey('something');
-    $httpProvider.interceptors.push('AppInterceptor');
-  });
+// angular.module('app')
+//   .config(function($httpProvider, AppInterceptorProvider) {
+//     // AppInterceptorProvider.setApiKey('something');
+//     $httpProvider.interceptors.push('AppInterceptor');
+//   });
 
 angular.module('app')
   .config(function($stateProvider, $urlRouterProvider) {

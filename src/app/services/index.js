@@ -1,10 +1,10 @@
 angular.module('app')
   .provider('AppInterceptor', function() {
-    var apiKey = null;
+    // var apiKey = null;
 
-    this.setApiKey = function(key) {
-      apiKey = key;
-    };
+    // this.setApiKey = function(key) {
+    //   apiKey = key;
+    // };
 
     this.$get = function($q, $rootScope) {
       return {
