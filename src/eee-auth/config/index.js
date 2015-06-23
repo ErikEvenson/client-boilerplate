@@ -1,37 +1,61 @@
-angular.module('eee-auth')
-  .config(function($httpProvider, AuthInterceptorProvider) {
-    $httpProvider.interceptors.push('AuthInterceptor');
-  });
+// angular.module('eee-auth')
+//   .config(function($httpProvider, AuthInterceptorProvider) {
+//     $httpProvider.interceptors.push('AuthInterceptor');
+//   });
 
 angular.module('eee-auth')
   .config(function($stateProvider) {
     // Auth
+    var authRoot = {
+      abstract: true,
+      name: 'authRoot',
+      parent: 'main',
+      template: '<ui-view/>',
+      url: '/auth'
+    };
+
     var login = {
       controller: 'LoginController',
       name: 'login',
-      parent: 'content',
-      // template: '<p>XXXXX</p>',
+      parent: authRoot,
+      template: '<p>XXXXX</p>',
       url: '/login'
     };
 
     var registration = {
       controller: 'RegistrationController',
       name: 'registration',
-      parent: 'main',
+      parent: authRoot,
       templateUrl: 'eee-auth.registration.html',
       url: '/registration'
     };
 
+    var registrationActivation = {
+      controller: 'RegistrationActivation',
+      name: 'registrationActivation',
+      parent: authRoot,
+      resolve: {
+        registration: function($stateParams, AuthService) {
+          return AuthService.Registrations
+            .get({registrationToken: $stateParams.registrationToken});
+        }
+      },
+      templateUrl: 'eee-auth.registrationActivation.html',
+      url: '/registrationActivation/:registrationToken'
+    };
+
     var registrationConfirmation = {
       name: 'registrationConfirmation',
-      parent: 'main',
+      parent: authRoot,
       templateUrl: 'eee-auth.registrationConfirmation.html',
       url: '/registrationConfirmation'
     };
 
     $stateProvider
+      .state(authRoot)
       .state(login)
       .state(registration)
+      .state(registrationActivation)
       .state(registrationConfirmation);
   });
 

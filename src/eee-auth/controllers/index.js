@@ -39,4 +39,10 @@ angular.module('eee-auth')
 
       $scope.user = new UsersService.Users({isActive: false});
     }
+  )
+  .controller(
+    'RegistrationActivation',
+    function($scope, $stateParams, AuthService, registration) {
+      $scope.registration = registration;
+    }
   );
