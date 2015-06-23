@@ -7,37 +7,35 @@
     .row
       .col-md-4
         .form-group(ng-class="{'has-error': registrationForm.first.$invalid && registrationForm.first.$touched}")
-          .form-group
-            label.control-label(for="first") First name:
-            input#name-first.form-control(
-              type="text", name="first", ng-model="user.name.first", required,
-              placeholder="First name"
-            )
+          label.control-label(for="first") First name:
+          input#name-first.form-control(
+            type="text", name="first", ng-model="user.name.first", required,
+            placeholder="First name"
+          )
 
-            div(
-              ng-messages="registrationForm.first.$error",
-              ng-if="registrationForm.first.$touched"
-            )
-              label.control-label(
-                ng-message="required"
-              ) A first name is required.
+          div(
+            ng-messages="registrationForm.first.$error",
+            ng-if="registrationForm.first.$touched"
+          )
+            label.control-label(
+              ng-message="required"
+            ) A first name is required.
 
       .col-md-4
         .form-group(ng-class="{'has-error': registrationForm.last.$invalid && registrationForm.last.$touched}")
-          .form-group
-            label.control-label(for="last") Last name:
-            input#name-first.form-control(
-              type="text", name="last", ng-model="user.name.last", required,
-              placeholder="Last name"
-            )
+          label.control-label(for="last") Last name:
+          input#name-first.form-control(
+            type="text", name="last", ng-model="user.name.last", required,
+            placeholder="Last name"
+          )
 
-            div(
-              ng-messages="registrationForm.last.$error",
-              ng-if="registrationForm.last.$touched"
-            )
-              label.control-label(
-                ng-message="required"
-              ) A last name is required.
+          div(
+            ng-messages="registrationForm.last.$error",
+            ng-if="registrationForm.last.$touched"
+          )
+            label.control-label(
+              ng-message="required"
+            ) A last name is required.
 
       .col-md-4
         .form-group(ng-class="{'has-error': registrationForm.username.$invalid && registrationForm.username.$touched}")

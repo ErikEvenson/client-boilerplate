@@ -18,7 +18,7 @@ angular.module('eee-auth')
       controller: 'LoginController',
       name: 'login',
       parent: authRoot,
-      template: '<p>XXXXX</p>',
+      templateUrl: 'eee-auth.login.html',
       url: '/login'
     };
 
@@ -62,9 +62,6 @@ angular.module('eee-auth')
 angular.module('eee-auth')
   .run(function($rootScope, $state){
     $rootScope.$on('unauthorized', function(error) {
-      console.log("unauthorized", error);
       $state.go('login');
-      // ifs for errors...
-      // $state.go('404');
     });
   });

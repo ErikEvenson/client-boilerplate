@@ -1,23 +1,11 @@
 angular.module('eee-auth')
   .controller(
     'LoginController',
-    function($modal, $scope) {
-      var dialog = $modal.open({
-        // backdrop: false,
-        controller: 'LoginInstanceController',
-        templateUrl: 'eee-auth.login.html',
-        scope: $scope.$new(true),
-        size: 'lg'
-        // windowTemplateUrl: null
-      }).result['finally'](function() {
-        console.log("FINALLY");
-      });
-    }
-  )
-  .controller(
-    'LoginInstanceController',
-    function($scope, $modalInstance) {
-
+    function($scope, AuthService) {
+      $scope.login = function(username, password) {
+        if ($scope.form.$invalid) return;
+        AuthService.login(username, password)
+      };
     }
   )
   .controller(
