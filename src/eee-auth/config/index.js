@@ -37,11 +37,11 @@ angular.module('eee-auth')
       resolve: {
         registration: function($stateParams, AuthService) {
           return AuthService.Registrations
-            .get({registrationToken: $stateParams.registrationToken});
+            .get({token: $stateParams.token});
         }
       },
       templateUrl: 'eee-auth.registrationActivation.html',
-      url: '/registrationActivation/:registrationToken'
+      url: '/registrationActivation/:token'
     };
 
     var registrationConfirmation = {
