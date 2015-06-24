@@ -1,5 +1,5 @@
 .container
-  div(ng-cloak, ng-show="registration.token")
-    h2 Account activation complete
-    p Your account has been successfully activated.  You may now log in.
-    button.btn.btn-primary(ui-sref="login") Log in
+  div(ng-cloak, ng-show="registration")
+    h2 Account activation
+    p Please complete your account activation by clicking the button below and logging on.
+    button.btn.btn-primary(ng-click="activateAndLogin()") Complete activation and log in

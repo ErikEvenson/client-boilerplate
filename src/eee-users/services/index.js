@@ -22,7 +22,7 @@ angular.module('eee-users')
           function(data) {return $q.reject();},
           function(error) {return true;}
         );      
-    }
+    };
 
     return service;
   });

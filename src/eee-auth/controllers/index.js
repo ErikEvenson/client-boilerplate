@@ -7,7 +7,7 @@ angular.module('eee-auth')
     function($scope, AuthService) {
       $scope.login = function(username, password) {
         if ($scope.form.$invalid) return;
-        AuthService.login(username, password)
+        AuthService.login(username, password);
       };
     }
   )
@@ -23,27 +23,12 @@ angular.module('eee-auth')
         }
       });
 
-      $scope.submit = function() {
+      $scope.register = function() {
         if ($scope.registrationForm.$invalid) return;
 
-        async.parallel(
-          [
-            function(cb) {
-              $scope.user.$save().then(function() {
-                cb();
-              });
-            },
-            function(cb) {
-              $scope.registration.username = $scope.user.username;
-              $scope.registration.$save().then(function() {
-                cb();
-              });
-            }
-          ],
-          function(err, results) {
-            $state.go('registrationConfirmation');
-          }
-        );
+        AuthService.register($scope.registration, $scope.user, function(err) {
+          $state.go('registrationConfirmation');
+        });
       };
 
       $scope.uniqueUsername = function(username) {
@@ -57,7 +42,13 @@ angular.module('eee-auth')
   )
   .controller(
     'RegistrationActivation',
-    function($scope, $stateParams, AuthService, registration) {
+    function($scope, $state, $stateParams, AuthService, registration) {
       $scope.registration = registration;
+
+      $scope.activateAndLogin = function() {
+        AuthService.activate($stateParams.token, function() {
+          $state.go('login');
+        });
+      };
     }
   );

@@ -1,3 +1,6 @@
+var
+  async = require('async');
+
 angular.module('eee-auth')
   .factory('AuthService', function($http, $q, $resource) {
     var apiUrl = '/api';
@@ -8,10 +11,42 @@ angular.module('eee-auth')
     
     service.Registrations = Registrations;
 
+    service.activate = function(token, cb) {
+      $http.post(
+        apiUrl + apiVersion + '/auth/registrations/' + token + '/activate',
+        {}
+      )
+        .then(function() {
+          cb();
+        });
+    };
+
     service.login = function(username, password) {
       console.log(username, password);
-    }
+    };
     
+    service.register = function(registration, user, done) {
+      async.parallel(
+        [
+          function(cb) {
+            user.$save().then(function() {
+              cb();
+            });
+          },
+          function(cb) {
+            registration.username = user.username;
+
+            registration.$save().then(function() {
+              cb();
+            });
+          }
+        ],
+        function(err, results) {
+          done(err);
+        }
+      );
+    };
+
 
     // https://github.com/grevory/angular-local-storage
 
