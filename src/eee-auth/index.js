@@ -1,6 +1,6 @@
 angular.module(
   'eee-auth',
-  ['ui.router']
+  ['ui.router','LocalStorageModule']
 );
 
 require('./config');

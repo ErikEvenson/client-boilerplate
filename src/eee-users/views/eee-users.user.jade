@@ -1,14 +1,14 @@
 h2 {{user.username}} #[small user {{userForm.$dirty?'(unsaved)':''}}]
 
-div.btn-toolbar
+.btn-toolbar
   button.btn.btn-primary(ui-sref="users") Back to user list
 
 hr
 
 form(name="userForm", novalidate)
-  div.row
-    div.col-md-4
-      div.form-group(ng-class="{'has-error': userForm.username.$invalid && userForm.username.$touched}")
+  .row
+    .col-md-4
+      .form-group(ng-class="{'has-error': userForm.username.$invalid && userForm.username.$touched}")
         label.control-label(for="username") Username:
 
         input#username.form-control(
@@ -32,9 +32,9 @@ form(name="userForm", novalidate)
             ng-message="uniqueUsername"
           ) That username is taken.
 
-    div.col-md-4
-      div.form-group(ng-class="{'has-error': userForm.first.$invalid && userForm.first.$touched}")
-        div.form-group
+    .col-md-4
+      .form-group(ng-class="{'has-error': userForm.first.$invalid && userForm.first.$touched}")
+        .form-group
           label.control-label(for="first") First name:
           input#name-first.form-control(
             type="text", name="first", ng-model="user.name.first", required
@@ -46,9 +46,9 @@ form(name="userForm", novalidate)
           )
             label.control-label(ng-message="required") A first name is required.
 
-    div.col-md-4
-      div.form-group(ng-class="{'has-error': userForm.last.$invalid && userForm.last.$touched}")
-        div.form-group
+    .col-md-4
+      .form-group(ng-class="{'has-error': userForm.last.$invalid && userForm.last.$touched}")
+        .form-group
           label.control-label(for="last") Last name:
           input#name-first.form-control(
             type="text", name="last", ng-model="user.name.last", required
@@ -60,9 +60,9 @@ form(name="userForm", novalidate)
           )
             label.control-label(ng-message="required") A last name is required.
 
-  div.row
-    div.col-md-4
-      div.form-group(
+  .row
+    .col-md-4
+      .form-group(
         ng-class="{'has-error': userForm.email.$invalid && userForm.email.$touched}"
       )
         label.control-label(for="email") Email:
@@ -76,7 +76,7 @@ form(name="userForm", novalidate)
           label.control-label(ng-message="email") Please enter a valid email.
 hr
 
-div.btn-toolbar
+.btn-toolbar
   button.btn.btn-primary(ng-click="save();", ng-class="{disabled: userForm.$invalid}") Save
   button.btn.btn-danger(ng-click="delete();") Delete
   button.btn.btn-danger(ui-sref="users") Cancel

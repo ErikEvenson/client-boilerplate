@@ -1,9 +1,20 @@
 nav.navbar.navbar-inverse(role="navigation")
-  div.navbar-header
+  .navbar-header
     a.navbar-brand(ui-sref="home") {{ brand }}
 
-  ul.nav.navbar-nav
-    li
-      a(ui-sref="home") Home
+  .collapse.navbar-collapse
+    ul.nav.navbar-nav
+      li:a(ui-sref="home") Home
+
+    ul.nav.navbar-nav.navbar-right
+      li(dropdown)
+        a(href="#", dropdown-toggle) Dropdown #[span.caret]
+
+        ul(role="menu").dropdown-menu
+          li: a Action 1
+          li: a Action 2
+          li: a Action 3
+          li(role="presentation").divider
+          li: a Action 4
 
 ui-view

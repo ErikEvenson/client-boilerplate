@@ -13,6 +13,7 @@ These are the technologies used in this project.
 - [angular]() 1.4.1 - HTML enhanced for web apps
 - [angular-animate]() 1.4.1
 - [angular-bootstrap]() 0.13.0 - An NPM package for using UI.Bootstrap directives with Node projects (via Browserify, etc.)
+- [angular-local-storage]() 0.2.2
 - [angular-messages]() 1.4.1
 - [angular-resource]() 1.4.1 - AngularJS module for interacting with RESTful server-side data sources
 - [angular-ui-grid]() 3.0.0-rc.22

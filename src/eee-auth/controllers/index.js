@@ -4,10 +4,18 @@ var
 angular.module('eee-auth')
   .controller(
     'LoginController',
-    function($scope, AuthService) {
-      $scope.login = function(username, password) {
+    function($scope, $state, AuthService) {
+      $scope.$on('eee-auth:success', function() {
+        $state.go('home');
+      });
+
+      $scope.$on('eee-auth:failure', function() {
+        console.log("auth:failure");
+      });
+
+      $scope.authenticate = function(username, password) {
         if ($scope.form.$invalid) return;
-        AuthService.login(username, password);
+        AuthService.authenticate(username, password);
       };
     }
   )

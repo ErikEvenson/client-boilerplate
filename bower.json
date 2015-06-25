@@ -23,7 +23,8 @@
     "angular-ui-router": "0.2.15",
     "bootstrap": "3.3.5",
     "angular-ui-grid": "3.0.0-rc.22",
-    "angular-animate": "1.4.1"
+    "angular-animate": "1.4.1",
+    "angular-local-storage": "~0.2.2"
   },
   "resolutions": {
     "angular": "1.4.1"

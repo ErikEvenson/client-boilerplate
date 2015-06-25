@@ -60,8 +60,19 @@ angular.module('eee-auth')
   });
 
 angular.module('eee-auth')
+  .config(function (localStorageServiceProvider) {
+    localStorageServiceProvider
+      .setPrefix('eee-auth')
+      .setNotify(true, true)
+  });
+
+angular.module('eee-auth')
   .run(function($rootScope, $state){
     $rootScope.$on('unauthorized', function(error) {
       $state.go('login');
     });
   });
+
+angular.module('eee-auth').run(function(AuthService){
+    AuthService.useTokenFromCache();
+});

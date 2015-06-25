@@ -2,7 +2,7 @@ var
   async = require('async');
 
 angular.module('eee-auth')
-  .factory('AuthService', function($http, $q, $resource) {
+  .factory('AuthService', function($http, $q, $resource, $rootScope, localStorageService) {
     var apiUrl = '/api';
     var service = {};
     var apiVersion = '/v1';
@@ -21,10 +21,6 @@ angular.module('eee-auth')
         });
     };
 
-    service.login = function(username, password) {
-      console.log(username, password);
-    };
-    
     service.register = function(registration, user, done) {
       async.parallel(
         [
@@ -47,28 +43,26 @@ angular.module('eee-auth')
       );
     };
 
+    service.authenticate = function (username, password) {
+      $http.post('/authenticate', {
+        username: username,
+        password: password
+      }).then(
+        function(data) {
+          localStorageService.add('eee-auth:token', data.token);
+          $http.defaults.headers.common['x-access-token'] = data.token;
+          $rootScope.$broadcast('eee-auth:success');
+        },
+        function(err) {
+          $rootScope.$broadcast('eee-auth:failure');
+        }
+      );
+    }
 
-    // https://github.com/grevory/angular-local-storage
-
-
-    // service.authenticate = function (userName, password) {
-    //     $http.post('/authenticate', {
-    //         user: userName,
-    //         password: password
-    //     }).then(function (data) {
-    //         localStorageService.add('authToken', data.token);
-    //         $http.defaults.headers.common['Authorization'] = 'Basic ' + data.token;
-    //         $rootScope.$broadcast('userAuthenticated');
-    //     });
-    // }
-    // service.useTokenFromCache=function() {
-    //     var token=localStorageService.get('authToken');
-    //     if(token) 
-    //     $http.defaults.headers.common['Authorization'] 
-    //       = 'Basic ' + data.token;
-    // }   
-
-
+    service.useTokenFromCache=function() {
+      var token = localStorageService.get('eee-auth:token');
+      if(token) $http.defaults.headers.common['x-access-token'] = data.token;
+    }   
 
     return service;
   });
