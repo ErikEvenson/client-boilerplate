@@ -15,7 +15,7 @@ module.exports = lib;
 // Run everything serially
 gulp.task('test', shell.task([
   'gulp lint:jshint',
-  'gulp lint:gjslint',
+  // 'gulp lint:gjslint',
   'gulp test:gulp',
   'gulp test:unit'
 ]));

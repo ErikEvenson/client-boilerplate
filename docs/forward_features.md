@@ -1,9 +1,11 @@
 # Forward features
 
+- Email on backend
+- Password reset
+- Front end testing
+- Bower main files
+- Secure API
 - Minify javascript
 - Add database utils
 - Add npm/bower install to build scripts
-- Secure API
-- Email on backend
 - Profile view
-- Front end testing
