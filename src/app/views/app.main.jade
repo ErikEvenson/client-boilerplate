@@ -3,18 +3,22 @@ nav.navbar.navbar-inverse(role="navigation")
     a.navbar-brand(ui-sref="home") {{ brand }}
 
   .collapse.navbar-collapse
-    ul.nav.navbar-nav
-      li:a(ui-sref="home") Home
+    ul.nav.navbar-nav.navbar-left
+      li: a(ui-sref="home") Home
 
-    ul.nav.navbar-nav.navbar-right
-      li(dropdown)
-        a(href="#", dropdown-toggle) Dropdown #[span.caret]
+    div(ng-if="!logged()")
+      ul.nav.navbar-nav.navbar-right
+        li: a(ui-sref="login") Login
+        li: a(ui-sref="registration") Register
 
-        ul(role="menu").dropdown-menu
-          li: a Action 1
-          li: a Action 2
-          li: a Action 3
-          li(role="presentation").divider
-          li: a Action 4
+    div(ng-if="logged()")
+      ul.nav.navbar-nav.navbar-right
+        li(dropdown)
+          a(href="#", dropdown-toggle) {{ loggedUser() }} #[span.caret]
+
+          ul(role="menu").dropdown-menu
+            li: a(ng-click="logout()") Logout
+            li(role="presentation").divider
+            li: a Something
 
 ui-view

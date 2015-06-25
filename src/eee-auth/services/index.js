@@ -21,6 +21,34 @@ angular.module('eee-auth')
         });
     };
 
+    service.authenticate = function (username, password) {
+      $http.post('/authenticate', {
+        username: username,
+        password: password
+      }).then(
+        function(res) {
+          localStorageService.set('eee-auth:token', res.data.token);
+          localStorageService.set('eee-auth:username', username);
+          $http.defaults.headers.common['x-access-token'] = res.data.token;
+          $rootScope.$broadcast('eee-auth:success');
+        },
+        function(err) {
+          $rootScope.$broadcast('eee-auth:failure');
+        }
+      );
+    };
+
+    service.logged = function() {
+      var logged = false;
+      if (localStorageService.get('eee-auth:token')) logged = true;
+      return logged;
+    };
+
+    service.logout = function() {
+      localStorageService.remove('eee-auth:token');
+      localStorageService.remove('eee-auth:username');
+    };
+
     service.register = function(registration, user, done) {
       async.parallel(
         [
@@ -43,26 +71,14 @@ angular.module('eee-auth')
       );
     };
 
-    service.authenticate = function (username, password) {
-      $http.post('/authenticate', {
-        username: username,
-        password: password
-      }).then(
-        function(data) {
-          localStorageService.add('eee-auth:token', data.token);
-          $http.defaults.headers.common['x-access-token'] = data.token;
-          $rootScope.$broadcast('eee-auth:success');
-        },
-        function(err) {
-          $rootScope.$broadcast('eee-auth:failure');
-        }
-      );
-    }
-
-    service.useTokenFromCache=function() {
+    service.useTokenFromCache = function() {
       var token = localStorageService.get('eee-auth:token');
-      if(token) $http.defaults.headers.common['x-access-token'] = data.token;
-    }   
+      if(token) $http.defaults.headers.common['x-access-token'] = token;
+    };
+
+    service.loggedUser = function() {
+      return localStorageService.get('eee-auth:username');
+    };
 
     return service;
   });

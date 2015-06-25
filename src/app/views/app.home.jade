@@ -2,7 +2,10 @@
   .container
     h1 Boilerplate
     p Something trite.
-    button.btn.btn-primary(ui-sref="registration") Register
+
+    div.btn-toolbar(ng-if="!logged()")
+      button.btn.btn-primary(ui-sref="login") Log in
+      button.btn.btn-primary(ui-sref="registration") Register
 
 .container
   p content
