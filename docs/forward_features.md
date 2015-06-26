@@ -1,6 +1,6 @@
 # Forward features
 
-- Email on backend
+- Log in failure
 - Password reset
 - Front end testing
 - Bower main files
@@ -9,3 +9,5 @@
 - Add database utils
 - Add npm/bower install to build scripts
 - Profile view
+- Password confirm
+- Full registration email
