@@ -1,5 +1,6 @@
 # Forward features
 
+- Full registration email
 - Log in failure
 - Password reset
 - Front end testing
@@ -10,4 +11,3 @@
 - Add npm/bower install to build scripts
 - Profile view
 - Password confirm
-- Full registration email
