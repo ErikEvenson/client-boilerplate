@@ -29,6 +29,24 @@ var lib = {
       '!' + config.basepath, options.source, '**/*.spec.js'
     ));
 
+    // Add bower files
+    bowerFiles = [
+      // CSS
+      path.join(config.basepath, 'bower_components/bootstrap/dist/css/bootstrap.min.css'),
+      path.join(config.basepath, 'bower_components/angular-ui-grid/ui-grid.min.css'),
+
+      // JS
+      path.join(config.basepath, 'bower_components/angular/angular.js'),
+      path.join(config.basepath, 'bower_components/angular-mocks/angular-mocks.js'),
+      path.join(config.basepath, 'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'),
+      path.join(config.basepath, 'bower_components/angular-messages/angular-messages.min.js'),
+      path.join(config.basepath, 'bower_components/angular-resource/angular-resource.min.js'),
+      path.join(config.basepath, 'bower_components/angular-ui-router/release/angular-ui-router.min.js'),
+      path.join(config.basepath, 'bower_components/angular-ui-grid/ui-grid.min.js'),
+      path.join(config.basepath, 'bower_components/angular-animate/angular-animate.min.js'),
+      path.join(config.basepath, 'bower_components/angular-local-storage/dist/angular-local-storage.min.js')
+    ];
+
     async.series([
       // Clean if asked
       function(cb1) {
@@ -38,12 +56,18 @@ var lib = {
           cb1();
         }
       },
-      // Move files
+      // Move soruce files
       function(cb3) {
         gulp.src(sourceFiles)
           // .pipe(newer(instancePath))
           .pipe(gulp.dest(instancePath))
           .on('end', cb3);
+      },
+      // Move bower files
+      function(cb) {
+        gulp.src(bowerFiles, {base: config.basepath})
+          .pipe(gulp.dest(path.join(instancePath, 'public')))
+          .on('end', cb);
       },
       // Templates
       function(cb4) {

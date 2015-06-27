@@ -22,7 +22,6 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "angular-mocks": "1.4.1",
     "async": "1.0.0",
     "aws-sdk": "2.1.32",
     "browserify": "10.2.4",

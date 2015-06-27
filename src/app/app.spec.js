@@ -1,4 +1,4 @@
-require('./app');
+// require('./app');
 
 describe('App module', function() {
   beforeEach(angular.mock.module('app'));

@@ -15,6 +15,7 @@ These are the technologies used in this project.
 - [angular-bootstrap]() 0.13.0 - An NPM package for using UI.Bootstrap directives with Node projects (via Browserify, etc.)
 - [angular-local-storage]() 0.2.2
 - [angular-messages]() 1.4.1
+- [angular-mocks]() 1.4.1 - AngularJS mocks for testing
 - [angular-resource]() 1.4.1 - AngularJS module for interacting with RESTful server-side data sources
 - [angular-ui-grid]() 3.0.0-rc.22
 - [angular-ui-router]() 0.2.15 - State-based routing for AngularJS
@@ -24,7 +25,6 @@ These are the technologies used in this project.
 
 ## npm-installed
 
-- [angular-mocks](https://www.npmjs.com/package/angular-mocks) 1.4.1 - AngularJS mocks for testing
 - [angular-resource](https:/
 - [async](https://www.npmjs.com/package/async) 1.0.0 - Higher-order functions and common patterns for asynchronous code
 - [aws-sdk](https://www.npmjs.com/package/aws-sdk) 2.1.32 - AWS SDK for JavaScript

@@ -1,5 +1,5 @@
-# Ignore bower components
-bower_components/
+# Ignore bower components directories
+**/bower_components/
 
 # Ignore test output directory
 /test/e2e/output/*
@@ -7,14 +7,14 @@ bower_components/
 # Ignore built instances
 /instances/*
 
-# Ignore secrets
+# Ignore secrets directories
 **/secrets/*
 
 # Ignore temp directory
 /temp/*
 
-# Ignore node module directory
-node_modules/
+# Ignore node module directories
+**/node_modules/
 
 # Ignore npm debug log
 npm-debug.log
