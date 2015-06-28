@@ -4,6 +4,7 @@ describe('App Controllers', function() {
   describe('MainController', function() {
     var mainController, $scope;
 
+    // config and set up mocks
     beforeEach(function() {
       angular.mock.module(function($provide) {
         $provide.factory('AuthService', function() {
@@ -19,6 +20,7 @@ describe('App Controllers', function() {
       });
     });
 
+    // inject dependencies
     beforeEach(inject(function($rootScope, $controller, $state, AuthService) {
       $scope = $rootScope.$new();
 
