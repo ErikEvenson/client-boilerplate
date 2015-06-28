@@ -21,6 +21,7 @@ module.exports = function(config) {
     captureTimeout: 60000,
     singleRun: false,
     preprocessors: {
+      'src/**/*.spec.js': ['ngannotate'],
       'src/**/*.js': ['browserify']
     },
     browserify: {

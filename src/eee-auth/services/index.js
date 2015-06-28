@@ -8,7 +8,6 @@ angular.module('eee-auth')
     var apiVersion = '/v1';
 
     var Registrations = $resource(apiUrl + apiVersion + '/auth/registrations/:token');
-    
     service.Registrations = Registrations;
 
     service.activate = function(token, cb) {
