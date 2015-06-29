@@ -39,6 +39,7 @@ These are the technologies used in this project.
 - [gulp-cached](https://www.npmjs.com/package/gulp-cached) 1.1.0 - A simple in-memory file cache for gulp
 - [gulp-callback](https://www.npmjs.com/package/gulp-callback) 0.0.3 - copied from http://c2journal.com/2014/07/30/gulp-pipe-callback/
 - [gulp-gjslint](https://www.npmjs.com/package/gulp-gjslint) 0.1.4 - Gulp task for running gjslint, the Google Closure linter
+- [gulp-install](https://www.npmjs.com/package/gulp-install) 0.4.0 - Automatically install npm and bower packages if package.json or bower.json is found in the gulp file stream respectively
 - [gulp-jade](https://www.npmjs.com/package/gulp-jade) 1.0.1 - Compile Jade templates
 - [gulp-jshint](https://www.npmjs.com/package/gulp-jshint) 1.11.0 - JSHint plugin for gulp
 - [gulp-karma](https://www.npmjs.com/package/gulp-karma) 0.0.4 - Karma plugin for gulp

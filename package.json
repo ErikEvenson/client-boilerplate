@@ -34,6 +34,7 @@
     "gulp-cached": "1.1.0",
     "gulp-callback": "0.0.3",
     "gulp-gjslint": "0.1.4",
+    "gulp-install": "0.4.0",
     "gulp-jade": "1.0.1",
     "gulp-jshint": "1.11.0",
     "gulp-karma": "0.0.4",

@@ -7,7 +7,7 @@ var
   path = require('path');
   server = require('./server');
 
-gulp.task('default', function(done) {
+gulp.task('default', ['build:install'], function(done) {
   var options = {
     clean: argv.clean || false,
     instance: argv.instance || 'development',
