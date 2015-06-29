@@ -3,7 +3,7 @@
 - Full registration email
 - Log in failure
 - Password reset
-- Front end testing
+- Additional front end testing
 - Bower main files
 - Secure API
 - Minify javascript

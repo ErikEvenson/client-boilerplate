@@ -44,7 +44,11 @@ var lib = {
       path.join(config.basepath, 'bower_components/angular-ui-router/release/angular-ui-router.min.js'),
       path.join(config.basepath, 'bower_components/angular-ui-grid/ui-grid.min.js'),
       path.join(config.basepath, 'bower_components/angular-animate/angular-animate.min.js'),
-      path.join(config.basepath, 'bower_components/angular-local-storage/dist/angular-local-storage.min.js')
+      path.join(config.basepath, 'bower_components/angular-local-storage/dist/angular-local-storage.min.js'),
+
+      // OTHER
+      path.join(config.basepath, 'bower_components/angular-ui-grid/ui-grid.woff'),
+      path.join(config.basepath, 'bower_components/angular-ui-grid/ui-grid.ttf')
     ];
 
     async.series([
