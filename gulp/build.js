@@ -112,7 +112,10 @@ var lib = {
 module.exports = lib;
 
 gulp.task('build:install', function() {
-  gulp.src(['./bower.json', './package.json'])
+  gulp.src([
+    path.join(config.basepath, 'bower.json'),
+    path.join(config.basepath, 'package.json')
+  ])
     .pipe(install());
 });
 
